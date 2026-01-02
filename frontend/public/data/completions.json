@@ -1,0 +1,14 @@
+[
+    {
+        "clientId": 1,
+        "missionId": 1
+    },
+    {
+        "clientId": 2,
+        "missionId": 1
+    },
+    {
+        "clientId": 1,
+        "missionId": 2
+    }
+]

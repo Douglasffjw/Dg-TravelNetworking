@@ -1,0 +1,396 @@
+// Prisma schema for Umbrella Corporation backend (PostgreSQL)
+// Pre-reqs:
+// - Set DATABASE_URL in prisma/.env
+// - To create from these models: npx prisma migrate dev --name init
+// - To introspect an existing DB instead: npx prisma db pull
+
+generator client {
+  provider     = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
+}
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================
+// Enums (based on CHECKs)
+// ==========================
+
+enum Role {
+  participante
+  admin
+  validador
+}
+
+enum TipoTarefa {
+  administrativa
+  conhecimento
+  engajamento
+  social
+  feedback
+}
+
+enum Dificuldade {
+  facil
+  medio
+  dificil
+}
+
+enum StatusPagamento {
+  pendente
+  pago
+  cancelado
+  reembolsado
+}
+
+enum StatusParticipacao {
+  inscrito
+  confirmado
+  concluido
+  cancelado
+}
+
+enum TipoCard {
+  empresa
+  destino
+  lider
+}
+
+enum Raridade {
+  comum
+  raro
+  epico
+}
+
+enum TipoPremiacao {
+  consultoria
+  gadget
+  certificado
+  outro
+}
+
+enum TipoPergunta {
+  multipla_escolha
+  verdadeiro_falso
+  texto
+}
+
+// ==========================
+// Models
+// ==========================
+
+model Usuario {
+  id               Int      @id @default(autoincrement())
+  nome             String
+  email            String   @unique
+  senha            String
+  empresa          String?
+  role             Role     @default(participante)
+  pontos           Int      @default(0)
+  pontos_totais    Int      @default(0)
+  foto_url         String?
+  ativo            Boolean  @default(true)
+  data_criacao     DateTime @default(now())
+  data_atualizacao DateTime @default(now())
+
+  // Relations
+  perfil         Perfil?
+  missoes        UsuarioMissao[]
+  tarefas        UsuarioTarefa[]
+  validacoes     UsuarioTarefa[]    @relation("Validacoes")
+  respostas      RespostaQuiz[]
+  cards          UsuarioCard[]
+  premiacoes     UsuarioPremiacao[]
+  logs           LogsPontos[]       @relation("LogUsuario")
+  validacoesLogs LogsPontos[]       @relation("LogValidador")
+
+  @@map("usuarios")
+}
+
+model Perfil {
+  id               Int       @id @default(autoincrement())
+  usuario_id       Int       @unique
+  curiosidades     String?
+  linkedin_url     String?
+  website          String?
+  interesses       String?
+  data_nascimento  DateTime? @db.Date
+  telefone         String?
+  data_criacao     DateTime  @default(now())
+  data_atualizacao DateTime  @default(now())
+
+  // Relations
+  usuario Usuario @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+
+  @@map("perfis")
+}
+
+model Missao {
+  id                 Int       @id @default(autoincrement())
+  titulo             String
+  descricao          String?
+  destino            String?
+  foto_url           String?
+  data_inicio        DateTime? @db.Date
+  data_fim           DateTime? @db.Date
+  preco              Decimal?  @db.Decimal(10, 2)
+  vagas_disponiveis  Int?
+  ativa              Boolean   @default(true)
+  missao_anterior_id Int?
+  data_criacao       DateTime  @default(now())
+  data_atualizacao   DateTime  @default(now())
+
+  // Relations
+  missaoAnterior  Missao?         @relation("MissaoAnterior", fields: [missao_anterior_id], references: [id], onDelete: SetNull)
+  proximasMissoes Missao[]        @relation("MissaoAnterior")
+  tarefas         Tarefa[]
+  usuarios        UsuarioMissao[]
+  logs            LogsPontos[]
+
+  @@map("missoes")
+}
+
+model CategoriaTarefa {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  descricao String?
+  icone     String?
+  cor       String?
+  ordem     Int     @default(0)
+
+  // Relations
+  tarefas Tarefa[]
+
+  @@map("categorias_tarefas")
+}
+
+model Tarefa {
+  id                 Int         @id @default(autoincrement())
+  missao_id          Int
+  categoria_id       Int?
+  titulo             String
+  descricao          String?
+  instrucoes         String?
+  pontos             Int         @default(0)
+  tipo               TipoTarefa?
+  dificuldade        Dificuldade @default(facil)
+  ativa              Boolean     @default(true)
+  ordem              Int         @default(0)
+  requisitos         Json?       @db.JsonB
+  tarefa_anterior_id Int?
+  data_criacao       DateTime    @default(now())
+  data_atualizacao   DateTime    @default(now())
+
+  // Relations
+  missao          Missao           @relation(fields: [missao_id], references: [id], onDelete: Cascade)
+  categoria       CategoriaTarefa? @relation(fields: [categoria_id], references: [id])
+  tarefaAnterior  Tarefa?          @relation("TarefaAnterior", fields: [tarefa_anterior_id], references: [id], onDelete: SetNull)
+  proximasTarefas Tarefa[]         @relation("TarefaAnterior")
+  usuarios        UsuarioTarefa[]
+  quiz            Quiz?
+  cards           Card[]
+  logs            LogsPontos[]
+
+  @@map("tarefas")
+}
+
+model TarefaPadrao {
+  id           Int         @id @default(autoincrement())
+  titulo       String
+  descricao    String?
+  instrucoes   String?
+  pontos       Int         @default(0)
+  tipo         TipoTarefa?
+  dificuldade  Dificuldade @default(facil)
+  ativa        Boolean     @default(true)
+  ordem        Int         @default(0)
+  requisitos   Json?       @db.JsonB
+  data_criacao DateTime    @default(now())
+
+  @@map("tarefas_padrao")
+}
+
+model UsuarioMissao {
+  id                  Int                @id @default(autoincrement())
+  usuario_id          Int
+  missao_id           Int
+  valor_pago          Decimal?           @default(0.00) @db.Decimal(10, 2)
+  forma_pagamento     String?
+  status_pagamento    StatusPagamento    @default(pendente)
+  codigo_transacao    String?
+  data_compra         DateTime           @default(now())
+  status_participacao StatusParticipacao @default(inscrito)
+
+  // Relations
+  usuario Usuario @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  missao  Missao  @relation(fields: [missao_id], references: [id], onDelete: Cascade)
+
+  @@unique([usuario_id, missao_id])
+  @@map("usuarios_missoes")
+}
+
+model UsuarioTarefa {
+  id             Int       @id @default(autoincrement())
+  usuario_id     Int
+  tarefa_id      Int
+  concluida      Boolean   @default(false)
+  pontos_obtidos Int       @default(0)
+  evidencias     Json?     @db.JsonB
+  data_conclusao DateTime?
+  tentativas     Int       @default(0)
+  validado_por   Int?
+  data_validacao DateTime?
+  data_criacao   DateTime  @default(now())
+
+  // Relations
+  usuario   Usuario  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  tarefa    Tarefa   @relation(fields: [tarefa_id], references: [id], onDelete: Cascade)
+  validador Usuario? @relation("Validacoes", fields: [validado_por], references: [id], onDelete: SetNull)
+
+  @@unique([usuario_id, tarefa_id])
+  @@map("usuarios_tarefas")
+}
+
+model Quiz {
+  id           Int      @id @default(autoincrement())
+  tarefa_id    Int      @unique
+  titulo       String
+  descricao    String?
+  ativo        Boolean  @default(true)
+  data_criacao DateTime @default(now())
+
+  // Relations
+  tarefa    Tarefa         @relation(fields: [tarefa_id], references: [id])
+  perguntas PerguntaQuiz[]
+
+  @@map("quizzes")
+}
+
+model PerguntaQuiz {
+  id               Int          @id @default(autoincrement())
+  quiz_id          Int
+  enunciado        String
+  tipo             TipoPergunta @default(multipla_escolha)
+  opcoes           Json?        @db.JsonB
+  resposta_correta String
+  explicacao       String?
+  ordem            Int          @default(0)
+  data_criacao     DateTime     @default(now())
+
+  // Relations
+  quiz      Quiz           @relation(fields: [quiz_id], references: [id], onDelete: Cascade)
+  respostas RespostaQuiz[]
+
+  @@map("perguntas_quiz")
+}
+
+model RespostaQuiz {
+  id             Int      @id @default(autoincrement())
+  usuario_id     Int
+  pergunta_id    Int
+  resposta       String
+  correta        Boolean  @default(false)
+  pontos_obtidos Int      @default(0)
+  data_resposta  DateTime @default(now())
+
+  // Relations
+  usuario  Usuario      @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  pergunta PerguntaQuiz @relation(fields: [pergunta_id], references: [id], onDelete: Cascade)
+
+  @@map("respostas_quizzes")
+}
+
+model Card {
+  id               Int      @id @default(autoincrement())
+  titulo           String
+  descricao        String?
+  tipo             TipoCard
+  imagem_url       String?
+  empresa_nome     String?
+  cargo            String?
+  pais             String?
+  cidade           String?
+  curiosidades     String[]
+  tarefa_requerida Int?
+  raridade         Raridade @default(comum)
+  ativo            Boolean  @default(true)
+  ordem            Int      @default(0)
+  data_criacao     DateTime @default(now())
+
+  // Relations
+  tarefa   Tarefa?       @relation(fields: [tarefa_requerida], references: [id])
+  usuarios UsuarioCard[]
+
+  @@map("cards")
+}
+
+model UsuarioCard {
+  id               Int      @id @default(autoincrement())
+  usuario_id       Int
+  card_id          Int
+  data_desbloqueio DateTime @default(now())
+
+  // Relations
+  usuario Usuario @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  card    Card    @relation(fields: [card_id], references: [id], onDelete: Cascade)
+
+  @@unique([usuario_id, card_id])
+  @@map("usuarios_cards")
+}
+
+model Premiacao {
+  id                    Int           @id @default(autoincrement())
+  titulo                String
+  descricao             String?
+  tipo                  TipoPremiacao
+  posicao_ranking       Int?
+  pontos_necessarios    Int?
+  quantidade_disponivel Int           @default(1)
+  imagem_url            String?
+  ativo                 Boolean       @default(true)
+  data_criacao          DateTime      @default(now())
+
+  // Relations
+  usuarios UsuarioPremiacao[]
+
+  @@map("premiacoes")
+}
+
+model UsuarioPremiacao {
+  id             Int       @id @default(autoincrement())
+  usuario_id     Int
+  premiacao_id   Int
+  data_premiacao DateTime  @default(now())
+  entregue       Boolean   @default(false)
+  data_entrega   DateTime?
+
+  // Relations
+  usuario   Usuario   @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  premiacao Premiacao @relation(fields: [premiacao_id], references: [id], onDelete: Cascade)
+
+  @@unique([usuario_id, premiacao_id])
+  @@map("usuarios_premiacoes")
+}
+
+model LogsPontos {
+  id           Int      @id @default(autoincrement())
+  usuario_id   Int
+  tarefa_id    Int?
+  missao_id    Int?
+  validador_id Int?
+  pontos       Int
+  tipo         String
+  descricao    String?
+  data_criacao DateTime @default(now())
+
+  // Relations
+  usuario   Usuario  @relation("LogUsuario", fields: [usuario_id], references: [id], onDelete: Cascade)
+  tarefa    Tarefa?  @relation(fields: [tarefa_id], references: [id], onDelete: SetNull)
+  missao    Missao?  @relation(fields: [missao_id], references: [id], onDelete: SetNull)
+  validador Usuario? @relation("LogValidador", fields: [validador_id], references: [id], onDelete: SetNull)
+
+  @@map("logs_pontos")
+}

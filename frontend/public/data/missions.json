@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Acabou de chegar!",
+    "points": 150,
+    "description": "Assista às aulas introdutórias e interaja com a comunidade.",
+    "rewards": ["⭐", "🎖️"],
+    "steps": [
+      { "id": 1, "type": "quiz", "title": "Responder quiz introdutório", "completedBy": [] },
+      { "id": 2, "type": "comment", "title": "Comentar em uma aula", "completedBy": [] },
+      { "id": 3, "type": "post", "title": "Fazer uma postagem de boas-vindas", "completedBy": [] }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Arquitetura WEB",
+    "points": 200,
+    "description": "Aprenda os fundamentos da arquitetura web e compartilhe o que aprendeu.",
+    "rewards": ["⭐"],
+    "steps": [
+      { "id": 1, "type": "quiz", "title": "Quiz sobre arquitetura web", "completedBy": [] },
+      { "id": 2, "type": "post", "title": "Postar resumo sobre arquitetura", "completedBy": [] },
+      { "id": 3, "type": "comment", "title": "Comentar em um post de outro aluno", "completedBy": [] }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Explorando HTML",
+    "points": 180,
+    "description": "Domine a estrutura básica do HTML.",
+    "rewards": ["📄", "⭐"],
+    "steps": [
+      { "id": 1, "type": "quiz", "title": "Quiz sobre tags HTML", "completedBy": [] },
+      { "id": 2, "type": "code", "title": "Criar uma página HTML simples", "completedBy": [] },
+      { "id": 3, "type": "comment", "title": "Comentar em uma aula de HTML", "completedBy": [] }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Missão CSS",
+    "points": 220,
+    "description": "Aprenda a estilizar páginas com CSS.",
+    "rewards": ["🎨", "⭐"],
+    "steps": [
+      { "id": 1, "type": "quiz", "title": "Quiz sobre seletores e propriedades", "completedBy": [] },
+      { "id": 2, "type": "code", "title": "Criar um layout com CSS", "completedBy": [] },
+      { "id": 3, "type": "post", "title": "Compartilhar seu layout com a turma", "completedBy": [] },
+      { "id": 4, "type": "comment", "title": "Dar feedback em outro layout", "completedBy": [] }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Viagem pelo JavaScript",
+    "points": 250,
+    "description": "Explore os fundamentos da linguagem JavaScript.",
+    "rewards": ["🚀", "⭐"],
+    "steps": [
+      { "id": 1, "type": "quiz", "title": "Quiz sobre variáveis e funções", "completedBy": [] },
+      { "id": 2, "type": "code", "title": "Criar um script interativo", "completedBy": [] },
+      { "id": 3, "type": "purchase", "title": "Simular compra de curso JS", "completedBy": [] },
+      { "id": 4, "type": "comment", "title": "Comentar em uma aula de JS", "completedBy": [] },
+      { "id": 5, "type": "post", "title": "Postar dica de JS", "completedBy": [] }
+    ]
+  }
+]

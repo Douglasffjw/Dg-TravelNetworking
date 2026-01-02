@@ -1,0 +1,37 @@
+[
+  {
+    "type": "singleSelect",
+    "question": "Qual planeta é conhecido como o Planeta Vermelho?",
+    "options": ["Júpiter", "Vênus", "Terra", "Marte"],
+    "answer": [3],
+    "explanation": "Marte é chamado de Planeta Vermelho devido à presença de óxido de ferro em sua superfície."
+  },
+  {
+    "type": "singleSelect",
+    "question": "Quem escreveu 'Dom Casmurro'?",
+    "options": ["Machado de Assis", "Carlos Drummond de Andrade", "Clarice Lispector", "José de Alencar"],
+    "answer": [0],
+    "explanation": "Machado de Assis é o autor de 'Dom Casmurro', um dos maiores clássicos da literatura brasileira."
+  },
+  {
+    "type": "singleSelect",
+    "question": "Qual é o maior oceano do planeta?",
+    "options": ["Ártico", "Pacífico", "Índico", "Atlântico"],
+    "answer": [1],
+    "explanation": "O Oceano Pacífico é o maior e mais profundo oceano da Terra."
+  },
+  {
+    "type": "singleSelect",
+    "question": "Em que país se encontra a Torre Eiffel?",
+    "options": ["Itália", "Espanha", "França", "Alemanha"],
+    "answer": [2],
+    "explanation": "A Torre Eiffel está localizada em Paris, França."
+  },
+  {
+    "type": "singleSelect",
+    "question": "Qual é o elemento químico representado pelo símbolo 'O'?",
+    "options": ["Prata", "Ouro", "Ferro", "Oxigênio"],
+    "answer": [3],
+    "explanation": "O símbolo 'O' representa o elemento Oxigênio na tabela periódica."
+  }
+]

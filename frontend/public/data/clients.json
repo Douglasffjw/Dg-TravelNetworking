@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Adrien Bezerra Leandro",
+        "initials": "AL"
+    },
+    {
+        "id": 2,
+        "name": "Alan Felipe de Oliveira",
+        "initials": "AO"
+    },
+    {
+        "id": 3,
+        "name": "Ana Vivian Lopes de Lima",
+        "initials": "AV"
+    },
+    {
+        "id": 4,
+        "name": "Carlos Silva",
+        "initials": "CS"
+    },
+    {
+        "id": 5,
+        "name": "Mariana Costa",
+        "initials": "MC"
+    }
+]
