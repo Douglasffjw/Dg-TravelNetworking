@@ -18,7 +18,10 @@ node_modules/.cache
 .cache
 .parcel-cache
 
-# Environment
+# Environment / secrets
+.env
+.env.local
+.env.*
 
 # Tooling
 *.local

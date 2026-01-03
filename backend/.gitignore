@@ -60,3 +60,11 @@ package-lock.json
 yarn.lock
 frontend/package-lock.json
 frontend/yarn.lock
+
+# Environment / secrets
+.env
+.env.local
+.env.*
+
+# VSCode
+.vscode
