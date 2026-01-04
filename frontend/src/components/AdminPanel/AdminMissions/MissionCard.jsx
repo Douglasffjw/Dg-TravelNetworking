@@ -72,14 +72,14 @@ const MissionCard = ({ mission, onEdit, onDelete, onManageParticipants }) => {
                 </div>
 
                 <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-bold text-gray-800 line-clamp-1 group-hover:text-[#394C97] transition-colors" title={mission.title}>
+                    <h3 className="text-lg font-bold text-gray-800 line-clamp-1 group-hover:text-[#006494] transition-colors" title={mission.title}>
                         {mission.title}
                     </h3>
                 </div>
 
                 <div className="flex items-center text-xs text-gray-500 mb-4 gap-3">
                     <span className="flex items-center gap-1">
-                        <Trophy size={14} className="text-[#FE5900]" /> 
+                        <Trophy size={14} className="text-[#986dff]" /> 
                         <span className="font-semibold">{displayPoints} XP</span>
                     </span>
                 </div>
@@ -108,7 +108,7 @@ const MissionCard = ({ mission, onEdit, onDelete, onManageParticipants }) => {
 
                         <button 
                             onClick={(e) => { e.stopPropagation(); onEdit(); }}
-                            className="p-2 text-gray-400 hover:text-[#394C97] hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200"
+                            className="p-2 text-gray-400 hover:text-[#006494] hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200"
                             title="Editar Missão"
                         >
                             <Edit size={16} />

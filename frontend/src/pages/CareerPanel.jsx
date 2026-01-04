@@ -26,8 +26,8 @@ ChartJS.register(
   Legend
 );
 
-const PRIMARY_COLOR = '#394C97';
-const ACCENT_COLOR = '#FE5900';
+const PRIMARY_COLOR = '#006494';
+const ACCENT_COLOR = '#986dff';
 
 // ===================================================================
 // DADOS MOCKADOS
@@ -154,7 +154,7 @@ export default function CareerPanel() {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       
       {/* --- BANNER SUPERIOR --- */}
-      <div className="h-64 w-full bg-[#394C97] relative">
+      <div className="h-64 w-full bg-[#006494] relative">
         <div className="absolute top-4 right-4 text-white/80 text-sm font-medium">
           Diário de Bordo
         </div>
@@ -166,7 +166,7 @@ export default function CareerPanel() {
             className="flex items-center gap-4 text-white"
           >
             <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
-              <Trophy className="w-10 h-10 text-[#FE5900]" />
+              <Trophy className="w-10 h-10 text-[#986dff]" />
             </div>
             <div>
               <h1 className="text-4xl font-bold tracking-tight">Diário de Bordo</h1>
@@ -193,7 +193,7 @@ export default function CareerPanel() {
             title="Pontos Totais"
             value={careerStats.totalPoints}
             icon={Zap}
-            color="text-[#FE5900]"
+            color="text-[#986dff]"
             bgColor="bg-orange-50"
             delay={0.2}
           />
@@ -217,8 +217,8 @@ export default function CareerPanel() {
             transition={{ delay: 0.4 }}
             className="md:col-span-1 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col"
           >
-            <h2 className="text-xl font-bold text-[#394C97] mb-6 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-[#FE5900]" />
+            <h2 className="text-xl font-bold text-[#006494] mb-6 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-[#986dff]" />
               Conquistas
             </h2>
             <div className="flex flex-wrap gap-2 content-start">
@@ -227,14 +227,14 @@ export default function CareerPanel() {
                   key={index}
                   className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200 flex items-center gap-2"
                 >
-                  <span className="w-2 h-2 rounded-full bg-[#FE5900]"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#986dff]"></span>
                   {badge}
                 </span>
               ))}
               <div className="w-full mt-4 p-4 bg-gray-50 rounded-xl text-center border border-dashed border-gray-300">
-                <p className="text-sm text-gray-400">Próxima: <span className="text-[#394C97] font-bold">Mestre das Serras</span></p>
+                <p className="text-sm text-gray-400">Próxima: <span className="text-[#006494] font-bold">Mestre das Serras</span></p>
                 <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2">
-                   <div className="bg-[#394C97] h-1.5 rounded-full w-[80%]"></div>
+                   <div className="bg-[#006494] h-1.5 rounded-full w-[80%]"></div>
                 </div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function CareerPanel() {
             className="md:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
           >
             <h2 className="text-xl font-bold text-[#394C97] mb-6 flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#FE5900]" />
+              <Calendar className="w-5 h-5 text-[#986dff]" />
               Últimas Atividades
             </h2>
             <div className="relative pl-4">
@@ -322,7 +322,7 @@ const ChartCard = ({ title, children, className = '', delay }) => (
     transition={{ delay, duration: 0.5 }}
     className={`bg-white rounded-2xl p-6 shadow-sm border border-gray-100 h-80 flex flex-col ${className}`}
   >
-    <h2 className="text-lg font-bold text-[#394C97] mb-6 flex items-center justify-between">
+    <h2 className="text-lg font-bold text-[#006494] mb-6 flex items-center justify-between">
       {title}
     </h2>
     <div className="flex-grow w-full h-full min-h-0 relative">

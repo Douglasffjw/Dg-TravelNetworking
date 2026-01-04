@@ -88,7 +88,7 @@ export default function FeedbackBar() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-2">
             <button
               type="submit"
-              className="bg-[#FE5900] text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition w-full sm:w-auto text-sm"
+              className="bg-[#986dff] text-white px-4 py-2 rounded-lg hover:bg-[#7b4cff] transition w-full sm:w-auto text-sm"
             >
               Enviar
             </button>
@@ -104,7 +104,7 @@ export default function FeedbackBar() {
       ) : (
         <button
           onClick={() => setOpen(true)}
-          className="bg-[#394C97] text-white px-5 py-2 rounded-full shadow-lg hover:bg-[#2f3c7e] transition text-sm"
+          className="bg-[#006494] text-white px-5 py-2 rounded-full shadow-lg hover:bg-[#986dff] transition text-sm"
         >
           💬 Feedback
         </button>

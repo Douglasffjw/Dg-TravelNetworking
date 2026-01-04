@@ -11,7 +11,7 @@ import FeedbackBar from "../components/Feedbacks/FeedbackBar";
 import MissionDetails from "../components/missions/MissionDetails"; 
 
 import { fetchMissions } from "../api/apiFunctions";
-import logoIcarir from "../assets/símbolo-icarir.png";
+import logoIcarir from "../assets/Logo DG Travelnetworking.png";
 
 export default function Home() {
   const [missions, setMissions] = useState([]);
@@ -21,15 +21,6 @@ export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
     AOS.refresh();
-
-    const scriptId = "elfsight-platform-script";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.src = "https://elfsightcdn.com/platform.js";
-      script.id = scriptId;
-      script.async = true;
-      document.body.appendChild(script);
-    }
   }, []);
 
   useEffect(() => {
@@ -68,9 +59,9 @@ export default function Home() {
       {/* --- SEÇÃO INSTAGRAM FEED --- */}
       <section className="relative bg-gradient-to-b from-[#002B5B] to-gray-50 dark:from-[#001a40] dark:to-[#3a3a3a] pt-20 pb-8 overflow-hidden min-h-[200px]">
         <div className="max-w-[1000px] mx-auto px-4 z-10 relative">
-          <div className="elfsight-app-86adf4a7-150a-4b09-9aea-cb904cc41a4a">
-            <p className="text-center text-white/50 text-sm py-10">Carregando Instagram...</p>
-          </div>
+          {/* Elfsight Instagram Feed | Untitled Instagram Feed */}
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div className="elfsight-app-ad7c3277-9209-4e97-b5aa-0ccdb1321570" data-elfsight-app-lazy></div>
         </div>
         <div className="absolute inset-0 z-0 opacity-5 pointer-events-none" style={{ backgroundImage: `url(${logoIcarir})`, backgroundSize: '300px', backgroundRepeat: 'no-repeat', backgroundPosition: 'center right' }}></div>
       </section>
@@ -78,17 +69,17 @@ export default function Home() {
       {/* --- SEÇÃO DE DESTINOS --- */}
       <section className="relative max-w-[1800px] mx-auto py-16 px-6 z-20">
         <div className="bg-white/90 dark:bg-[#2f2f2f] backdrop-blur-md rounded-2xl p-8 shadow-xl dark:shadow-2xl mb-12 relative z-10 max-w-4xl mx-auto text-center border border-gray-100 dark:border-gray-700">
-          <span className="text-[#FE5900] dark:text-[#394C97] font-bold uppercase tracking-widest text-sm">Expandir Horizontes</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#394C97] dark:text-[#FE5900] mt-2">Destinos para Empreendedores</h2>
+          <span className="text-[#2d1a82] dark:text-[#006494] font-bold uppercase tracking-widest text-sm">Expandir Horizontes</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-[#006494] dark:text-[#986dff] mt-2">Destinos que geram conexões</h2>
           <p className="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
             Descubra ecossistemas de inovação, feche negócios e participe de missões exclusivas nas cidades mais dinâmicas do nosso país.
           </p>
-          <div className="w-24 h-1.5 bg-[#FE5900] dark:bg-[#394C97] mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-1.5 bg-[#2d1a82] dark:bg-[#006494] mx-auto mt-6 rounded-full"></div>
         </div>
 
         {loading ? (
           <div className="flex justify-center items-center py-20">
-            <Loader className="animate-spin text-[#394C97] w-10 h-10" />
+            <Loader className="animate-spin text-[#006494] w-10 h-10" />
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 relative z-10">

@@ -31,7 +31,7 @@ const TasksManagerModal = ({ mission, onClose, onSave, isLoading }) => {
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white p-8 rounded-xl w-full max-w-2xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
-                <h2 className="text-2xl font-bold mb-6 text-[#394C97] flex items-center gap-2">
+                <h2 className="text-2xl font-bold mb-6 text-[#006494] flex items-center gap-2">
                     <CheckSquare size={24} />
                     Gerenciar Tarefas: {mission?.title}
                 </h2>
@@ -110,7 +110,7 @@ const TasksManagerModal = ({ mission, onClose, onSave, isLoading }) => {
                     <button 
                         onClick={handleSave} 
                         disabled={isLoading}
-                        className="bg-[#394C97] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2f3f7a] shadow-md transition disabled:opacity-50"
+                        className="bg-[#006494] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2f3f7a] shadow-md transition disabled:opacity-50"
                     >
                         Salvar Tarefas
                     </button>

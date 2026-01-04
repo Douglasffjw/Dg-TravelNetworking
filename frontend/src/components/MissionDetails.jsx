@@ -27,7 +27,7 @@ const TaskItem = ({ task, onClick, isLocked, isCompleted }) => (
                 {isCompleted ? <CheckCircle className="w-6 h-6" /> : (isLocked ? <Lock className="w-6 h-6" /> : <PlayCircle className="w-6 h-6" />)}
             </div>
             <div>
-                <h4 className={`font-bold text-lg transition-colors ${isLocked ? 'text-gray-500' : 'text-gray-800 group-hover:text-[#394C97]'}`}>
+                <h4 className={`font-bold text-lg transition-colors ${isLocked ? 'text-gray-500' : 'text-gray-800 group-hover:text-[#006494]'}`}>
                     {task.titulo}
                 </h4>
                 <p className="text-sm text-gray-500 mt-1 flex items-center gap-2">
@@ -169,7 +169,7 @@ export default function MissionDetails() {
   };
 
   // --- RENDERIZAÇÃO ---
-  if (loading) return <div className="min-h-screen flex items-center justify-center bg-gray-50"><Loader className="animate-spin w-10 h-10 text-[#394C97]" /><span className="ml-3 text-lg text-gray-600">Carregando missão...</span></div>;
+    if (loading) return <div className="min-h-screen flex items-center justify-center bg-gray-50"><Loader className="animate-spin w-10 h-10 text-[#006494]" /><span className="ml-3 text-lg text-gray-600">Carregando missão...</span></div>;
   if (error) return <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-red-500"><AlertCircle className="w-12 h-12 mb-4"/><p className="text-xl">{error}</p><button onClick={() => navigate('/missions')} className="mt-6 px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">Voltar</button></div>;
   if (!missionData) return null;
 
@@ -209,7 +209,7 @@ export default function MissionDetails() {
         
         <div className="absolute inset-0 flex items-end pb-12 px-6 md:px-20 text-white z-10" data-aos="fade-up">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-[#FE5900] font-bold tracking-wider uppercase text-sm mb-2">
+            <div className="flex items-center gap-2 text-[#986dff] font-bold tracking-wider uppercase text-sm mb-2">
                 <MapPin size={16} /> {destino}
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight shadow-text mb-4">
@@ -217,7 +217,7 @@ export default function MissionDetails() {
             </h1>
             <div className="flex flex-wrap items-center gap-6 text-lg">
               <div className="flex items-center gap-2">
-                <Trophy className="w-6 h-6 text-[#FE5900]" />
+                <Trophy className="w-6 h-6 text-[#986dff]" />
                 <span className="font-semibold">{pontos} Pontos</span>
               </div>
               <div className="flex items-center gap-2 opacity-90">
@@ -237,7 +237,7 @@ export default function MissionDetails() {
           <div className="lg:col-span-2 space-y-8">
             
             {/* CARD DE STATUS / AÇÃO */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#FE5900]" data-aos="fade-up">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-[#006494]" data-aos="fade-up">
                 {!isJoined ? (
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>
@@ -247,7 +247,7 @@ export default function MissionDetails() {
                         <button
                             onClick={handleJoin}
                             disabled={joining}
-                            className="whitespace-nowrap bg-[#394C97] hover:bg-blue-800 text-white px-8 py-4 rounded-xl transition duration-300 shadow-lg font-bold uppercase tracking-wider flex items-center gap-2"
+                            className="whitespace-nowrap bg-[#006494] hover:brightness-90 text-white px-8 py-4 rounded-xl transition duration-300 shadow-lg font-bold uppercase tracking-wider flex items-center gap-2"
                         >
                             {joining ? <Loader className="animate-spin w-5 h-5"/> : <PlayCircle className="w-5 h-5" />}
                             Iniciar Missão
@@ -261,7 +261,7 @@ export default function MissionDetails() {
                                     <span className="text-green-600"><CheckCircle className="w-6 h-6"/></span> 
                                     Missão em Andamento
                                 </h2>
-                                <p className="text-gray-500 text-sm mt-1">Você já acumulou <strong className="text-[#394C97]">{myTotalPoints} XP</strong></p>
+                                <p className="text-gray-500 text-sm mt-1">Você já acumulou <strong className="text-[#006494]">{myTotalPoints} XP</strong></p>
                             </div>
                             <button onClick={handleLeave} disabled={leaving} className="text-red-400 hover:text-red-600 text-sm font-semibold flex items-center gap-1 transition-colors">
                                 <LogOut size={16}/> Sair
@@ -277,8 +277,8 @@ export default function MissionDetails() {
                                     {Math.round(progressPercentage)}%
                                 </span>
                             </div>
-                            <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-blue-100">
-                                <div style={{ width: `${progressPercentage}%` }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#394C97] transition-all duration-700"></div>
+                                <div className="overflow-hidden h-3 mb-4 text-xs flex rounded bg-blue-100">
+                                <div style={{ width: `${progressPercentage}%` }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#006494] transition-all duration-700"></div>
                             </div>
                         </div>
                     </div>
@@ -327,12 +327,12 @@ export default function MissionDetails() {
           <div className="lg:col-span-1 space-y-8">
              
              {/* Ficha Técnica */}
-             <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100" data-aos="fade-left">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100" data-aos="fade-left">
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#FE5900]" /> Recompensas
+                    <Award className="w-5 h-5 text-[#006494]" /> Recompensas
                 </h3>
                 <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                    <div className="flex items-center gap-3 p-3 bg-[#006494]/10 rounded-lg">
                         <div className="bg-white p-2 rounded-full shadow-sm"><Trophy className="w-5 h-5 text-yellow-500" /></div>
                         <div>
                             <p className="text-xs text-gray-500 uppercase font-bold">XP Total</p>

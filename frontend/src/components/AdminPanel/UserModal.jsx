@@ -24,7 +24,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white p-8 rounded-xl w-full max-w-md shadow-2xl relative">
-                <h2 className="text-2xl font-bold mb-6 text-[#394C97]">
+                <h2 className="text-2xl font-bold mb-6 text-[#006494]">
                     {isEditing ? "Editar Usuário" : "Criar Novo Usuário"}
                 </h2>
 
@@ -37,7 +37,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                     <div className="space-y-4">
                         
                         {/* Nome */}
-                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#FE5900]">
+                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#986dff]">
                             <User size={20} className="text-gray-400" />
                             <input
                                 type="text"
@@ -52,7 +52,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                         </div>
 
                         {/* Email */}
-                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#FE5900]">
+                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#986dff]">
                             <Mail size={20} className="text-gray-400" />
                             <input
                                 type="email"
@@ -67,7 +67,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                         </div>
                         
                         {/* Senha (Obrigatório apenas na Criação ou se for Editado/opcional) */}
-                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#FE5900]">
+                        <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#986dff]">
                             <Lock size={20} className="text-gray-400" />
                             <input
                                 type="password"
@@ -84,7 +84,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                         {isEditing && (
                             <>
                                 {/* Pontos */}
-                                <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#FE5900]">
+                                <div className="flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#986dff]">
                                     <Zap size={20} className="text-gray-400" />
                                     <input
                                         type="number"
@@ -98,7 +98,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                                 </div>
 
                                 {/* Nível (Dropdown) */}
-                                <div className="relative flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#FE5900]">
+                                <div className="relative flex items-center gap-3 border p-3 rounded-lg focus-within:border-[#986dff]">
                                     <TrendingUp size={20} className="text-gray-400" />
                                     <select
                                         name="level"
@@ -130,7 +130,7 @@ const UserModal = ({ user, setUser, handleSave, handleClose, isEditing, isLoadin
                         <button 
                             type="submit" // Agora o botão submete o formulário
                             disabled={isLoading}
-                            className="bg-[#394C97] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2f3f7a] shadow-md transition disabled:opacity-50 flex items-center gap-2"
+                            className="bg-[#006494] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#2f3f7a] shadow-md transition disabled:opacity-50 flex items-center gap-2"
                         >
                             {isLoading ? <Loader size={20} className="animate-spin" /> : null}
                             {isEditing ? "Salvar Edição" : "Criar Usuário"}

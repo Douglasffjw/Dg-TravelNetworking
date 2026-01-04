@@ -66,7 +66,7 @@ const CategoryCard = ({ category, onEdit, onDelete, onCreateTask }) => (
         {/* Botão de Ação */}
         <button 
             onClick={() => onCreateTask(category)} 
-            className="w-full mt-2 py-2.5 bg-gray-50 hover:bg-[#394C97] border border-gray-100 hover:border-[#394C97] rounded-xl text-xs font-bold text-gray-600 hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
+            className="w-full mt-2 py-2.5 bg-gray-50 hover:bg-[#006494] border border-gray-100 hover:border-[#006494] rounded-xl text-xs font-bold text-gray-600 hover:text-white transition-all flex items-center justify-center gap-2 group/btn"
         >
             <Plus size={14} className="group-hover/btn:scale-110 transition-transform" /> 
             Adicionar Tarefa
@@ -90,7 +90,7 @@ const CategoryModal = ({ onClose, onSave, isLoading, isEditing, category, setCat
                         value={category.nome} 
                         onChange={e => setCategory({...category, nome: e.target.value})}
                         placeholder="Ex: Segurança de Redes"
-                        className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-gray-800 focus:border-[#394C97] focus:ring-2 focus:ring-[#394C97]/20 outline-none transition-all" 
+                        className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-gray-800 focus:border-[#006494] focus:ring-2 focus:ring-[#006494]/20 outline-none transition-all" 
                     />
                 </div>
                 <div>
@@ -99,7 +99,7 @@ const CategoryModal = ({ onClose, onSave, isLoading, isEditing, category, setCat
                         value={category.descricao} 
                         onChange={e => setCategory({...category, descricao: e.target.value})}
                         placeholder="Breve descrição sobre o tema..."
-                        className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-gray-800 focus:border-[#394C97] focus:ring-2 focus:ring-[#394C97]/20 outline-none transition-all h-28 resize-none" 
+                        className="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-gray-800 focus:border-[#006494] focus:ring-2 focus:ring-[#006494]/20 outline-none transition-all h-28 resize-none" 
                     />
                 </div>
                 
@@ -123,7 +123,7 @@ const CategoryModal = ({ onClose, onSave, isLoading, isEditing, category, setCat
                     <button 
                         onClick={() => onSave(category)} 
                         disabled={isLoading} 
-                        className="px-6 py-2.5 bg-[#394C97] hover:bg-[#2d3a75] text-white rounded-xl font-bold flex items-center gap-2 text-sm shadow-lg shadow-blue-900/10 transition-all disabled:opacity-70"
+                        className="px-6 py-2.5 bg-[#006494] hover:bg-[#2d3a75] text-white rounded-xl font-bold flex items-center gap-2 text-sm shadow-lg shadow-blue-900/10 transition-all disabled:opacity-70"
                     >
                         {isLoading ? <Loader className="animate-spin" size={16} /> : <Check size={16} />} 
                         Salvar Alterações
@@ -300,7 +300,7 @@ const CategoriesContent = () => {
         <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20">
             
             {/* --- BANNER SUPERIOR (COR RESTAURADA: #394C97) --- */}
-            <div className="h-64 w-full bg-[#394C97] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
+            <div className="h-64 w-full bg-[#006494] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-6 h-full flex items-center pb-10 md:translate-y-2 relative z-10">
                     <motion.div 
@@ -308,8 +308,8 @@ const CategoriesContent = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="flex items-center gap-5 text-white"
                     >
-                        <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20">
-                            <Layers className="w-6 h-6 text-[#FE5900]" />
+                            <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20">
+                            <Layers className="w-6 h-6 text-[#986dff]" />
                         </div>
                         <div>
                             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">Categorias</h1>
@@ -324,7 +324,7 @@ const CategoriesContent = () => {
                 
                 {/* Header de Ações */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-                    <div className="bg-[#FE5900] px-4 py-2 rounded-xl text-sm text-white font-medium shadow-lg shadow-orange-900/10">
+                    <div className="bg-[#986dff] px-4 py-2 rounded-xl text-sm text-white font-medium shadow-lg shadow-[#986dff]/10">
                         Total de Categorias: <span className="font-bold">{categories.length}</span>
                     </div>
 
@@ -332,7 +332,7 @@ const CategoriesContent = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         onClick={() => { setIsEditing(false); setCurrentCategory(INITIAL_CATEGORY_STATE); setShowModal(true); }}
-                        className="bg-white text-[#394C97] px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5 border border-gray-100"
+                        className="bg-white text-[#006494] px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5 border border-gray-100"
                         disabled={isSaving}
                     >
                         <Plus size={16} strokeWidth={3} />

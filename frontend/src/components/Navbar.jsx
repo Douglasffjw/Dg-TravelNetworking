@@ -11,7 +11,8 @@ import {
     MoonIcon // Ícone de Lua do Heroicons (para padronizar)
 } from "@heroicons/react/24/outline";
 import { useState, useEffect, useRef } from "react";
-import logoIcarir from "../assets/símbolo-icarir.png"; // ✅ Import real
+import logoDefault from "../assets/Logo DG Travelnetworking.png"; // Logo DG Travelnetworking
+import logoWhite from "../assets/Logo DG Travelnetworking Branco.png"; // Logo DG Travelnetworking Branco (light mode)
 import api from "../api/api"; // ✅ Import real
 
 export default function Navbar() {
@@ -113,7 +114,7 @@ export default function Navbar() {
 
     const navbarClasses = `w-full px-8 py-1 flex justify-between items-center fixed top-0 left-0 z-50 backdrop-blur-md transition-all duration-500 ${isTransparent
         ? "bg-transparent text-white"
-        : "bg-white text-[#394C97] shadow-md"
+        : "bg-white text-[#006494] shadow-md"
         }`;
 
     // --- LÓGICA DE VISIBILIDADE DOS LINKS ---
@@ -145,35 +146,38 @@ export default function Navbar() {
             {/* LOGO */}
             <Link to="/" className="flex items-center gap-2 z-50">
                 <img
-                    src={logoIcarir}
-                    alt="Logo ICARIR"
-                    className="h-14 w-auto transition-transform duration-300 hover:scale-105"
+                    src={isDarkMode ? logoDefault : logoWhite}
+                    alt={isDarkMode ? "Logo DG Travelnetworking" : "Logo DG Travelnetworking Branco"}
+                    className="h-16 w-auto transition-transform duration-300 hover:scale-105"
                 />
             </Link>
 
             {/* MENU DESKTOP */}
             <ul className="hidden md:flex gap-8 text-base font-medium tracking-wide">
-                {navLinks.map((item, index) => (
-                    <li key={index} className="relative group">
-                        <Link
-                            to={item.path}
-                            className={`
-                    transition-all duration-200
-                    hover:scale-110 active:scale-95
-                    ${isTransparent ? "text-white hover:text-orange-500" : "text-[#394C97] hover:text-orange-500"}
-                `}
-                        >
-                            {item.name}
+                {navLinks.map((item, index) => {
+                    const isSpecial = item.name === "Início" || item.name === "Cadastro";
+                    const linkColorClass = isTransparent
+                        ? "text-white hover:text-[#986dff]"
+                        : (isDarkMode && isSpecial)
+                            ? "text-[#006494] hover:text-[#986dff]"
+                            : "text-[#394C97] hover:text-[#986dff]";
 
-                            {/* Underline animado */}
-                            <span
-                                className="absolute left-0 -bottom-1 w-full h-[2px] bg-orange-500
-                    scale-x-0 group-hover:scale-x-100
-                    origin-left transition-transform duration-300"
-                            ></span>
-                        </Link>
-                    </li>
-                ))}
+                    return (
+                        <li key={index} className="relative group">
+                            <Link
+                                to={item.path}
+                                className={`transition-all duration-200 hover:scale-110 active:scale-95 ${linkColorClass}`}
+                            >
+                                {item.name}
+
+                                {/* Underline animado */}
+                                <span
+                                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-[#986dff] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                                ></span>
+                            </Link>
+                        </li>
+                    );
+                })}
             </ul>
 
 
@@ -182,16 +186,16 @@ export default function Navbar() {
 
                 {/* Instagram (Desktop) */}
                 <a
-                    href="https://www.instagram.com/escoladeempreendedores"
+                    href="https://www.instagram.com/desenhosdff/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-        hidden md:flex items-center gap-2 text-sm font-medium
-        relative group
-        transition-all duration-200
-        active:scale-95
-        hover:text-orange-500
-    "
+            hidden md:flex items-center gap-2 text-sm font-medium
+            relative group
+            transition-all duration-200
+            active:scale-95
+            hover:text-[#986dff]
+        "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +210,7 @@ export default function Navbar() {
                     {/* Underline animado */}
                     <span
                         className="
-            absolute left-0 -bottom-1 w-full h-[2px] bg-orange-500
+            absolute left-0 -bottom-1 w-full h-[2px] bg-[#986dff]
             scale-x-0 group-hover:scale-x-100
             origin-left transition-transform duration-300
         "
@@ -218,10 +222,10 @@ export default function Navbar() {
                 <button
                     onClick={toggleTheme}
                     className="
-        hidden md:flex items-center gap-2 p-2 rounded-lg
-        text-sm transition-all duration-200
-        hover:text-orange-500 active:scale-95
-    "
+                    hidden md:flex items-center gap-2 p-2 rounded-lg
+                    text-sm transition-all duration-200
+                    hover:text-[#986dff] active:scale-95
+                "
                     title={isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
                 >
                     {isDarkMode ? (
@@ -238,13 +242,13 @@ export default function Navbar() {
                 <div className="md:hidden">
                     <button
                         onClick={() => setMobileMenuOpen((prev) => !prev)}
-                        className="hover:text-orange transition focus:outline-none"
+                        className="hover:text-[#986dff] transition focus:outline-none"
                     >
                         {mobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
                     </button>
                 </div>
 
-                <MagnifyingGlassIcon className="h-6 w-6 hover:text-orange cursor-pointer" />
+                <MagnifyingGlassIcon className="h-6 w-6 hover:text-[#986dff] cursor-pointer" />
                 {/* Ícone BellIcon Removido */}
 
                 {/* **ÁREA DO USUÁRIO** */}
@@ -259,12 +263,12 @@ export default function Navbar() {
                                 <img
                                     src={user.foto_url}
                                     alt="Perfil"
-                                    className="h-10 w-10 rounded-full object-cover border-2 border-orange"
+                                    className={`h-10 w-10 rounded-full object-cover border-2 ${isDarkMode ? 'border-[#986dff]' : 'border-[#006494]'}`}
                                 />
                             ) : (
                                 <div className={`h-9 w-9 rounded-full flex items-center justify-center border-2 font-bold text-xs ${isTransparent
                                         ? "bg-white/20 border-white text-white"
-                                        : "bg-[#394C97] border-[#394C97] text-white"
+                                        : "bg-[#006494] border-[#006494] text-white"
                                     }`}>
                                     {getInitials(user?.nome)}
                                 </div>
@@ -291,10 +295,10 @@ export default function Navbar() {
 
                     {/* DROPDOWN FLUTUANTE (DESKTOP) */}
                     {menuOpen && isAuthenticated && user && (
-                        <div className="absolute right-0 mt-3 w-56 bg-white text-[#394C97] rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50 animate-fade-in">
+                                <div className="absolute right-0 mt-3 w-56 bg-white text-[#006494] rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50 animate-fade-in">
                             <div className="px-4 py-3 border-b border-gray-100 mb-1 bg-gray-50">
                                 <p className="text-xs text-gray-500 uppercase font-semibold">Olá,</p>
-                                <p className="text-sm font-bold truncate text-[#FE5900]">{user.nome}</p>
+                                <p className={`text-sm font-bold truncate ${isDarkMode ? 'text-[#986dff]' : 'text-[#394C97]'}`}>{user.nome}</p>
                             </div>
 
                             <ul className="flex flex-col">
@@ -313,7 +317,7 @@ export default function Navbar() {
                                             ) : (
                                                 <Link
                                                     to={item.path}
-                                                    className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#394C97]"
+                                                    className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#006494]"
                                                     onClick={() => setMenuOpen(false)}
                                                 >
                                                     <Icon className={`h-4 w-4 ${item.rotateIcon ? "rotate-180" : ""}`} />
@@ -331,17 +335,17 @@ export default function Navbar() {
 
             {/* MOBILE DROPDOWN */}
             {mobileMenuOpen && (
-                <div className="md:hidden absolute top-full right-0 w-full bg-white text-[#394C97] shadow-xl border-t border-gray-100 z-50">
+                <div className="md:hidden absolute top-full right-0 w-full bg-white text-[#006494] shadow-xl border-t border-gray-100 z-50">
                     <ul className="flex flex-col py-2">
                         {navLinks.map((item, index) => (
                             <li key={index}>
-                                <Link
-                                    to={item.path}
-                                    className="block px-6 py-3 text-sm hover:bg-gray-100 transition font-medium"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
+                                        <Link
+                                            to={item.path}
+                                            className={`block px-6 py-3 text-sm hover:bg-gray-100 transition font-medium ${isDarkMode && (item.name === 'Início' || item.name === 'Cadastro') ? 'text-[#006494]' : ''}`}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </Link>
                             </li>
                         ))}
 
@@ -351,7 +355,7 @@ export default function Navbar() {
                                     <Link
                                         to="/login"
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className="block px-6 py-3 text-sm hover:bg-gray-100 transition font-semibold text-[#394C97]"
+                                        className="block px-6 py-3 text-sm hover:bg-gray-100 transition font-semibold text-[#006494]"
                                     >
                                         Login Cliente
                                     </Link>
@@ -373,7 +377,7 @@ export default function Navbar() {
                             <>
                                 <div className="border-t border-gray-100 mt-2 pt-2 px-6 pb-2">
                                     <p className="text-xs text-gray-400">Logado como</p>
-                                    <p className="text-sm font-bold text-[#FE5900]">{user.nome}</p>
+                                    <p className={`text-sm font-bold ${isDarkMode ? 'text-[#986dff]' : 'text-[#394C97]'}`}>{user.nome}</p>
                                 </div>
                                 {userMenuItems.map((item, index) => {
                                     const Icon = item.icon;

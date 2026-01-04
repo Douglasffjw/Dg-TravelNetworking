@@ -107,7 +107,7 @@ const MissionParticipantsModal = ({ mission, onClose }) => {
                 {/* Header */}
                 <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl">
                     <div>
-                        <h2 className="text-xl font-bold text-[#394C97] flex items-center gap-2">
+                        <h2 className="text-xl font-bold text-[#006494] flex items-center gap-2">
                             <Users size={20} /> Participantes da Missão
                         </h2>
                         <p className="text-xs text-gray-500 mt-0.5 font-medium">{mission.title}</p>
@@ -125,14 +125,14 @@ const MissionParticipantsModal = ({ mission, onClose }) => {
                         {!isAdding ? (
                             <button 
                                 onClick={() => setIsAdding(true)}
-                                className="w-full py-3 border-2 border-dashed border-gray-200 rounded-xl text-gray-500 hover:border-[#394C97] hover:text-[#394C97] hover:bg-blue-50/30 transition-all flex items-center justify-center gap-2 font-semibold text-sm"
+                                className="w-full py-3 border-2 border-dashed border-gray-200 rounded-xl text-gray-500 hover:border-[#006494] hover:text-[#006494] hover:bg-blue-50/30 transition-all flex items-center justify-center gap-2 font-semibold text-sm"
                             >
                                 <UserPlus size={18} /> Adicionar Novo Participante
                             </button>
                         ) : (
                             <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 animate-fade-in">
                                 <div className="flex justify-between items-center mb-3">
-                                    <h4 className="text-sm font-bold text-[#394C97]">Selecionar Usuário</h4>
+                                    <h4 className="text-sm font-bold text-[#006494]">Selecionar Usuário</h4>
                                     <button onClick={() => setIsAdding(false)} className="text-xs text-gray-500 hover:text-red-500 font-medium">Cancelar</button>
                                 </div>
                                 <div className="relative mb-3">
@@ -150,7 +150,7 @@ const MissionParticipantsModal = ({ mission, onClose }) => {
                                     {availableUsers.length > 0 ? availableUsers.map(u => (
                                         <div key={u.id} className="flex justify-between items-center p-2 hover:bg-white rounded-lg cursor-pointer group transition-colors border border-transparent hover:border-blue-100 shadow-sm" onClick={() => handleAddParticipant(u.id)}>
                                             <div className="flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-xs font-bold text-[#394C97]">
+                                                <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-xs font-bold text-[#006494]">
                                                     {u.nome?.charAt(0).toUpperCase()}
                                                 </div>
                                                 <div className="flex flex-col">
@@ -184,7 +184,7 @@ const MissionParticipantsModal = ({ mission, onClose }) => {
                     </div>
 
                     {loading ? (
-                        <div className="flex justify-center py-10"><Loader className="animate-spin text-[#394C97]" /></div>
+                        <div className="flex justify-center py-10"><Loader className="animate-spin text-[#006494]" /></div>
                     ) : filteredParticipants.length > 0 ? (
                         <div className="space-y-2">
                             {filteredParticipants.map((p) => (
@@ -198,7 +198,7 @@ const MissionParticipantsModal = ({ mission, onClose }) => {
                                         {p.avatar ? (
                                             <img src={p.avatar} alt={p.name} className="w-10 h-10 rounded-full object-cover border border-gray-200" />
                                         ) : (
-                                            <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#394C97] font-bold">
+                                            <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#006494] font-bold">
                                                 {p.name?.charAt(0).toUpperCase()}
                                             </div>
                                         )}

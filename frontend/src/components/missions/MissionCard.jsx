@@ -96,7 +96,7 @@ const MissionCard = ({ mission, onClick }) => {
     return (
         <div 
             onClick={onClick}
-            className={`bg-white rounded-xl shadow-sm border p-0 cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 relative overflow-hidden group flex flex-col h-full ${isUserJoined ? 'border-[#394C97] ring-1 ring-[#394C97]/20' : 'border-gray-100'}`}
+            className={`bg-white rounded-xl shadow-sm border p-0 cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 relative overflow-hidden group flex flex-col h-full ${isUserJoined ? 'border-[#006494] ring-1 ring-[#006494]/20' : 'border-gray-100'}`}
         >
             {/* Área da Imagem de Capa */}
             <div className="h-44 w-full relative bg-gray-100 overflow-hidden">
@@ -119,7 +119,7 @@ const MissionCard = ({ mission, onClick }) => {
 
                  {/* Badge de Pontos */}
                  <div className="absolute bottom-3 left-3 z-10">
-                     <span className="bg-white/90 backdrop-blur text-[#FE5900] text-[10px] font-bold px-2 py-1 rounded-lg shadow-sm flex items-center gap-1">
+                     <span className="bg-white/90 backdrop-blur text-[#986dff] text-[10px] font-bold px-2 py-1 rounded-lg shadow-sm flex items-center gap-1">
                         <Award size={10} /> {displayPoints} XP
                      </span>
                  </div>
@@ -133,7 +133,7 @@ const MissionCard = ({ mission, onClick }) => {
                     </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-800 line-clamp-2 group-hover:text-[#394C97] transition-colors mb-2 leading-tight">
+                <h3 className="text-lg font-bold text-gray-800 line-clamp-2 group-hover:text-[#006494] transition-colors mb-2 leading-tight">
                     {displayTitle}
                 </h3>
 
@@ -151,7 +151,7 @@ const MissionCard = ({ mission, onClick }) => {
                             </div>
                             <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                 <div 
-                                    className="h-full bg-[#394C97] rounded-full transition-all duration-500" 
+                                    className="h-full bg-[#006494] rounded-full transition-all duration-500" 
                                     style={{ width: `${progress}%` }} 
                                 />
                             </div>

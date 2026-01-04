@@ -211,7 +211,7 @@ export default function Missions() {
     if (loading && !selectedMission) {
       return (
         <div className="flex flex-col items-center justify-center py-20 bg-white rounded-2xl shadow-sm border border-gray-100">
-            <Loader size={40} className="animate-spin text-[#394C97] mb-4" /> 
+            <Loader size={40} className="animate-spin text-[#006494] mb-4" /> 
             <p className="text-gray-500 font-medium">Sincronizando missões...</p>
         </div>
       );
@@ -255,7 +255,7 @@ export default function Missions() {
                     onClick={() => setActiveTab('active')}
                     className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                         activeTab === 'active' 
-                        ? 'bg-[#394C97] text-white shadow-md' 
+                        ? 'bg-[#006494] text-white shadow-md' 
                         : 'text-gray-500 hover:bg-gray-50'
                     }`}
                 >
@@ -266,7 +266,7 @@ export default function Missions() {
                     onClick={() => setActiveTab('completed')}
                     className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
                         activeTab === 'completed' 
-                        ? 'bg-[#394C97] text-white shadow-md' 
+                        ? 'bg-[#006494] text-white shadow-md' 
                         : 'text-gray-500 hover:bg-gray-50'
                     }`}
                 >
@@ -300,7 +300,7 @@ export default function Missions() {
                     <p className="text-gray-500 font-medium">
                         {activeTab === 'active' ? 'Nenhuma missão ativa no momento.' : 'Nenhuma missão concluída ainda.'}
                     </p>
-                    <button onClick={loadMissions} className="mt-4 text-[#394C97] text-sm flex items-center gap-1 hover:underline">
+                    <button onClick={loadMissions} className="mt-4 text-[#006494] text-sm flex items-center gap-1 hover:underline">
                         <RefreshCw size={12} /> Atualizar lista
                     </button>
                 </div>
@@ -314,7 +314,7 @@ export default function Missions() {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       
       {/* --- BANNER SUPERIOR --- */}
-      <div className="h-64 w-full bg-[#394C97] relative">
+      <div className="h-64 w-full bg-[#006494] relative">
         <div className="absolute top-4 right-4 text-white/80 text-sm font-medium">
           Central de Operações
         </div>
@@ -326,7 +326,7 @@ export default function Missions() {
             className="flex items-center gap-4 text-white"
           >
             <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
-              <Target className="w-10 h-10 text-[#FE5900]" />
+              <Target className="w-10 h-10 text-[#986dff]" />
             </div>
             <div>
               <h1 className="text-4xl font-bold tracking-tight">Suas Missões</h1>

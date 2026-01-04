@@ -5,7 +5,7 @@ import { EnvelopeIcon, LockClosedIcon, ArrowRightOnRectangleIcon } from "@heroic
 import api from "../api/api"; // ✅ Import real da sua API
 
 export default function Login() {
-  const [form, setForm] = useState({ email: "", senha: "" });
+  const [form, setForm] = useState({ email: "dg@gmail.com", senha: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#394C97] to-[#1E2A5E] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#006494] to-[#006494] px-4">
       
       {/* Container do Card com Animação */}
       <motion.div 
@@ -55,10 +55,10 @@ export default function Login() {
         className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-md border border-gray-100 relative overflow-hidden"
       >
         {/* Detalhe decorativo no topo (Barra Gradiente) */}
-        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#394C97] to-[#FE5900]"></div>
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#006494] to-[#986dff]"></div>
 
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-extrabold text-[#394C97] tracking-tight">
+          <h1 className="text-3xl font-extrabold text-[#006494] tracking-tight">
             Bem-vindo
           </h1>
           <p className="text-gray-500 text-sm mt-2">
@@ -70,7 +70,7 @@ export default function Login() {
           
           {/* Campo Email */}
           <div>
-            <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">
+              <label className="block text-xs font-bold text-[#006494] uppercase tracking-wide mb-1">
               Endereço de E-mail
             </label>
             <div className="relative">
@@ -79,10 +79,10 @@ export default function Login() {
               </div>
               <input
                 type="email"
-                placeholder="seu@email.com"
+                placeholder="dg@gmail.com"
                 value={form.email}
                 onChange={handleChange("email")}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] focus:border-transparent outline-none transition bg-gray-50 focus:bg-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] focus:border-transparent outline-none transition bg-gray-50 focus:bg-white"
                 required
               />
             </div>
@@ -90,7 +90,7 @@ export default function Login() {
 
           {/* Campo Senha */}
           <div>
-            <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">
+              <label className="block text-xs font-bold text-[#006494] uppercase tracking-wide mb-1">
               Sua Senha
             </label>
             <div className="relative">
@@ -102,7 +102,7 @@ export default function Login() {
                 placeholder="••••••••"
                 value={form.senha}
                 onChange={handleChange("senha")}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] focus:border-transparent outline-none transition bg-gray-50 focus:bg-white"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] focus:border-transparent outline-none transition bg-gray-50 focus:bg-white"
                 required
               />
             </div>
@@ -126,7 +126,7 @@ export default function Login() {
             className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-lg text-white font-bold text-lg shadow-lg transition transform hover:-translate-y-0.5
               ${loading 
                 ? "bg-gray-400 cursor-not-allowed" 
-                : "bg-[#FE5900] hover:bg-[#e04f00] hover:shadow-orange-500/30"
+                  : "bg-[#006494] hover:bg-[#986dff] hover:shadow-[#006494]/30"
               }`}
           >
             {loading ? (
@@ -143,10 +143,7 @@ export default function Login() {
         {/* Rodapé do Card */}
         <div className="mt-8 text-center text-sm text-gray-600">
           Não tem uma conta?{" "}
-          <Link 
-            to="/register" 
-            className="font-bold text-[#394C97] hover:text-[#FE5900] hover:underline transition"
-          >
+          <Link to="/register" className="font-bold text-[#006494] hover:text-[#986dff] hover:underline transition">
             Cadastre-se gratuitamente
           </Link>
         </div>

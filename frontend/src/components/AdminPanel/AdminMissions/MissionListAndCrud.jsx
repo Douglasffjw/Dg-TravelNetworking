@@ -319,7 +319,7 @@ const MissionListAndCRUD = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-64 bg-white rounded-2xl shadow-sm border border-gray-100">
-                <Loader size={32} className="animate-spin text-[#394C97] mb-4" /> 
+                <Loader size={32} className="animate-spin text-[#006494] mb-4" /> 
                 <p className="text-gray-500 font-medium text-sm">Carregando missões...</p>
             </div>
         );
@@ -348,7 +348,7 @@ const MissionListAndCRUD = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         onClick={() => handleModalOpen()}
-                        className="w-full md:w-auto bg-[#FE5900] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#e04f00] hover:shadow-orange-500/20 transition-all flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5"
+                        className="w-full md:w-auto bg-[#986dff] text-white px-6 py-3 rounded-xl shadow-lg hover:brightness-90 hover:shadow-[#986dff]/20 transition-all flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5"
                         disabled={isSaving}
                     >
                         <Plus size={16} strokeWidth={3} />

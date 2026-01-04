@@ -35,13 +35,13 @@ export default function HomeCard({
 
         {/* Badge de Localização sobre a imagem */}
         <div className="absolute bottom-3 left-3 flex items-center gap-1 text-white text-xs font-bold bg-black/30 backdrop-blur-md px-2 py-1 rounded-lg border border-white/20 shadow-sm">
-            <MapPin size={12} className="text-[#FE5900]" /> {city}
+            <MapPin size={12} className="text-[#986dff]" /> {city}
         </div>
       </div>
 
       {/* Conteúdo Informativo */}
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-2 group-hover:text-[#394C97] dark:group-hover:text-[#FE5900] transition-colors">
+        <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 line-clamp-2 group-hover:text-[#986dff] dark:group-hover:text-[#986dff] transition-colors">
           {title || city}
         </h3>
         
@@ -50,7 +50,7 @@ export default function HomeCard({
         </p>
 
         {/* Call to Action passivo (Link) */}
-        <div className="mt-auto flex items-center text-sm font-bold text-[#394C97] dark:text-[#FE5900] group-hover:underline">
+        <div className="mt-auto flex items-center text-sm font-bold text-[#986dff] dark:text-[#986dff] group-hover:underline">
           Ver detalhes <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
         </div>
       </div>

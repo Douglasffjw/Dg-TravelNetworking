@@ -286,7 +286,7 @@ const TaskQuizModal = ({
                                 type="text"
                                 value={task.titulo || ""}
                                 onChange={(e) => handleChange('titulo', e.target.value)}
-                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 focus:border-[#394C97] outline-none font-bold text-gray-700 transition-all"
+                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#006494]/20 focus:border-[#006494] outline-none font-bold text-gray-700 transition-all"
                                 placeholder="Ex: Contrato assinado"
                             />
                         </div>
@@ -296,7 +296,7 @@ const TaskQuizModal = ({
                             <textarea 
                                 value={task.descricao || ""}
                                 onChange={(e) => handleChange('descricao', e.target.value)}
-                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 focus:border-[#394C97] outline-none text-sm min-h-[80px] transition-all resize-none"
+                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#006494]/20 focus:border-[#006494] outline-none text-sm min-h-[80px] transition-all resize-none"
                                 placeholder="Instruções para o usuário..."
                             />
                         </div>
@@ -308,7 +308,7 @@ const TaskQuizModal = ({
                                 <select 
                                     value={task.missao_id || task.mission_id || ""}
                                     onChange={(e) => handleChange('missao_id', Number(e.target.value))}
-                                    className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 outline-none text-sm appearance-none cursor-pointer"
+                                    className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#006494]/20 outline-none text-sm appearance-none cursor-pointer"
                                 >
                                     <option value="">Selecione...</option>
                                     {missions.map(m => (
@@ -326,7 +326,7 @@ const TaskQuizModal = ({
                                     const val = e.target.value;
                                     handleChange('categoria_id', val === "" ? null : Number(val));
                                 }}
-                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 outline-none text-sm cursor-pointer"
+                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#006494]/20 outline-none text-sm cursor-pointer"
                             >
                                 <option value="">Nenhuma</option>
                                 {categories.map(c => (
@@ -341,7 +341,7 @@ const TaskQuizModal = ({
                                 type="number"
                                 value={task.pontos || 0}
                                 onChange={(e) => handleChange('pontos', Number(e.target.value))}
-                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 outline-none text-sm font-bold text-[#394C97]"
+                                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#006494]/20 outline-none text-sm font-bold text-[#006494]"
                                 placeholder="0"
                             />
                         </div>
@@ -393,7 +393,7 @@ const TaskQuizModal = ({
                     <button 
                         type="button"
                         onClick={onSaveWrapper}
-                        className="px-8 py-3 text-xs font-bold text-white bg-[#394C97] hover:bg-[#2a385f] rounded-xl shadow-lg shadow-indigo-200 transition-all flex items-center gap-2 uppercase tracking-wide hover:-translate-y-0.5 active:translate-y-0"
+                        className="px-8 py-3 text-xs font-bold text-white bg-[#006494] hover:bg-[#2a385f] rounded-xl shadow-lg shadow-indigo-200 transition-all flex items-center gap-2 uppercase tracking-wide hover:-translate-y-0.5 active:translate-y-0"
                         disabled={isLoading}
                     >
                         {isLoading ? <span className="animate-spin">⌛</span> : <Save size={16} />}

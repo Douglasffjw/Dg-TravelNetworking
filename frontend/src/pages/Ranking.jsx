@@ -87,7 +87,7 @@ export default function Ranking() {
     if (loading) {
         return (
           <div className="flex flex-col items-center justify-center py-20 bg-white rounded-2xl shadow-sm border border-gray-100">
-              <Loader size={40} className="animate-spin text-[#394C97] mb-4" /> 
+              <Loader size={40} className="animate-spin text-[#006494] mb-4" /> 
               <p className="text-gray-500 font-medium">Calculando pontuações...</p>
           </div>
         );
@@ -144,7 +144,7 @@ export default function Ranking() {
                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gray-400 text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-white shadow-sm">2</div>
                         </div>
                         <h3 className="font-bold text-gray-800 text-xs md:text-sm text-center max-w-[80px] truncate">{secondPlace.name}</h3>
-                        <p className="text-[#394C97] font-bold text-sm">{secondPlace.points}</p>
+                        <p className="text-[#006494] font-bold text-sm">{secondPlace.points}</p>
                         <div className="w-20 md:w-28 h-24 md:h-28 bg-gradient-to-t from-gray-200 to-gray-50 rounded-t-lg border-x border-t border-gray-200 mt-2"></div>
                     </motion.div>
 
@@ -188,7 +188,7 @@ export default function Ranking() {
                             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-white shadow-sm">3</div>
                         </div>
                         <h3 className="font-bold text-gray-800 text-xs md:text-sm text-center max-w-[80px] truncate">{thirdPlace.name}</h3>
-                        <p className="text-[#394C97] font-bold text-sm">{thirdPlace.points}</p>
+                        <p className="text-[#006494] font-bold text-sm">{thirdPlace.points}</p>
                         <div className="w-20 md:w-28 h-16 md:h-20 bg-gradient-to-t from-orange-100 to-orange-50 rounded-t-lg border-x border-t border-orange-200 mt-2"></div>
                     </motion.div>
                 </div>
@@ -227,7 +227,7 @@ export default function Ranking() {
                                         </div>
                                     )}
                                     <div className="overflow-hidden">
-                                        <h4 className={`font-bold text-sm truncate ${user.id === currentUser?.id ? 'text-[#394C97]' : 'text-gray-700'}`}>
+                                        <h4 className={`font-bold text-sm truncate ${user.id === currentUser?.id ? 'text-[#006494]' : 'text-gray-700'}`}>
                                             {user.name} {user.id === currentUser?.id && <span className="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded ml-1 font-normal">Você</span>}
                                         </h4>
                                         <p className="text-[11px] text-gray-400 uppercase truncate flex items-center gap-1">
@@ -258,7 +258,7 @@ export default function Ranking() {
       <Navbar />
 
       {/* --- BANNER SUPERIOR --- */}
-      <div className="h-64 w-full bg-[#394C97] relative pt-[50px]">
+      <div className="h-64 w-full bg-[#006494] relative pt-[50px]">
         <div className="absolute top-4 right-4 text-white/80 text-sm font-medium hidden md:block mt-[50px]">
           Temporada Atual
         </div>
@@ -270,7 +270,7 @@ export default function Ranking() {
             className="flex items-center gap-4 text-white"
           >
             <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
-              <Trophy className="w-10 h-10 text-[#FE5900]" />
+              <Trophy className="w-10 h-10 text-[#986dff]" />
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Líderes da Temporada</h1>
@@ -294,7 +294,7 @@ export default function Ranking() {
           >
             <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="bg-[#394C97] text-white font-bold text-sm w-10 h-10 flex flex-col items-center justify-center rounded-xl leading-tight shadow-md ring-2 ring-blue-100">
+                <div className="bg-[#006494] text-white font-bold text-sm w-10 h-10 flex flex-col items-center justify-center rounded-xl leading-tight shadow-md ring-2 ring-blue-100">
                   <span className="text-[9px] uppercase opacity-70">Pos</span>
                   <span>{currentUser.rank}</span>
                 </div>
@@ -304,7 +304,7 @@ export default function Ranking() {
                 </div>
               </div>
               <div className="text-right">
-                  <div className="text-xl md:text-2xl font-black text-[#394C97] leading-none">
+                  <div className="text-xl md:text-2xl font-black text-[#006494] leading-none">
                   {currentUser.points} <span className="text-xs font-normal text-gray-400">pts</span>
                 </div>
               </div>

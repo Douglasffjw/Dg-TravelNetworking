@@ -83,9 +83,9 @@ export default function AdminPanel() {
                                 initial={{ opacity: 0 }} 
                                 animate={{ opacity: 1 }} 
                                 exit={{ opacity: 0 }}
-                                className="text-2xl font-extrabold text-[#394C97] tracking-tight whitespace-nowrap"
+                                className="text-2xl font-extrabold text-[#006494] tracking-tight whitespace-nowrap"
                             >
-                                Icarir<span className="text-[#FE5900] dark:text-[#394C97]">. </span>ADM
+                                DG<span className="text-[#986dff] dark:text-[#006494]">. </span>ADM
                             </motion.h1>
                         )}
                     </AnimatePresence>
@@ -105,8 +105,8 @@ export default function AdminPanel() {
                             onClick={() => setActiveTab(tab.id)}
                             className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-200 group relative overflow-hidden ${
                                 activeTab === tab.id
-                                    ? "bg-[#394C97] text-white shadow-lg shadow-blue-900/20"
-                                    : "text-gray-600 hover:bg-blue-50 hover:text-[#394C97]"
+                                    ? "bg-[#006494] text-white shadow-lg shadow-blue-900/20"
+                                    : "text-gray-600 hover:bg-blue-50 hover:text-[#006494]"
                             }`}
                         >
                             <div className={`relative z-10 ${!isSidebarOpen && "mx-auto"}`}>

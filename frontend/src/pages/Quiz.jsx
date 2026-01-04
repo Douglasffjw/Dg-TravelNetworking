@@ -29,12 +29,12 @@ export default function Quiz() {
   };
 
   if (questions.length === 0)
-    return <p className="text-center mt-10 text-[#394C97]">Carregando quiz...</p>;
+    return <p className="text-center mt-10 text-[#006494]">Carregando quiz...</p>;
 
   const q = questions[current];
 
   return (
-    <div className="min-h-screen bg-[#FEF7EC] text-[#394C97] px-4 py-12 flex items-center justify-center relative">
+    <div className="min-h-screen bg-[#FEF7EC] text-[#006494] px-4 py-12 flex items-center justify-center relative">
       <div className="w-full max-w-screen-sm bg-white rounded-xl shadow-lg p-6 sm:p-8">
         <h2 className="text-3xl font-bold text-center mb-6">Quiz Interativo</h2>
 
@@ -51,7 +51,7 @@ export default function Quiz() {
                 className={`w-full text-left px-4 py-3 rounded-lg border transition-colors duration-200 focus:outline-none
                   ${
                     selected === i
-                      ? "bg-[#FEF7EC] text-[#394C97] border-[#FE5900]"
+                      ? "bg-[#FEF7EC] text-[#006494] border-[#986dff]"
                       : "bg-gray-200 hover:bg-gray-300"
                   }
                   ${confirmed ? "cursor-not-allowed opacity-90" : "cursor-pointer"}
@@ -67,7 +67,7 @@ export default function Quiz() {
             <button
               onClick={handleConfirm}
               disabled={selected === null}
-              className="mt-6 w-full py-3 bg-[#FE5900] text-white font-semibold rounded-lg hover:bg-orange-600 transition"
+              className="mt-6 w-full py-3 bg-[#986dff] text-white font-semibold rounded-lg hover:bg-orange-600 transition"
             >
               Confirmar Resposta
             </button>
@@ -84,12 +84,12 @@ export default function Quiz() {
               {current < questions.length - 1 ? (
                 <button
                   onClick={handleNext}
-                  className="mt-4 w-full py-3 bg-[#FE5900] text-white font-semibold rounded-lg hover:bg-[#394C97] transition"
+                  className="mt-4 w-full py-3 bg-[#986dff] text-white font-semibold rounded-lg hover:bg-[#006494] transition"
                 >
                   Próxima Pergunta
                 </button>
               ) : (
-                <p className="mt-4 text-center font-semibold text-[#394C97]">
+                <p className="mt-4 text-center font-semibold text-[#006494]">
                   🎉 Fim do quiz!
                 </p>
               )}

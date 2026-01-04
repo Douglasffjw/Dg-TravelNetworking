@@ -83,7 +83,7 @@ export default function Register() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#394C97] to-[#1E2A5E] px-4 pt-[50px] pb-10">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#006494] to-[#1E2A5E] px-4 pt-[50px] pb-10">
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -91,10 +91,10 @@ export default function Register() {
                 className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 relative overflow-hidden"
             >
                 {/* Barra decorativa */}
-                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#394C97] to-[#FE5900]"></div>
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#006494] to-[#986dff]"></div>
 
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl font-extrabold text-[#394C97] tracking-tight">
+                    <h2 className="text-3xl font-extrabold text-[#006494] tracking-tight">
                         Criar Conta
                     </h2>
                     <p className="text-gray-500 text-sm mt-2">
@@ -112,7 +112,7 @@ export default function Register() {
                             placeholder="Nome completo"
                             value={form.name}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] outline-none bg-gray-50 focus:bg-white transition"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] outline-none bg-gray-50 focus:bg-white transition"
                             required
                         />
                     </div>
@@ -126,7 +126,7 @@ export default function Register() {
                             placeholder="Email"
                             value={form.email}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] outline-none bg-gray-50 focus:bg-white transition"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] outline-none bg-gray-50 focus:bg-white transition"
                             required
                         />
                     </div>
@@ -140,7 +140,7 @@ export default function Register() {
                             placeholder="Senha"
                             value={form.password}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] outline-none bg-gray-50 focus:bg-white transition"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] outline-none bg-gray-50 focus:bg-white transition"
                             required
                         />
                     </div>
@@ -154,7 +154,7 @@ export default function Register() {
                             placeholder="Confirmar senha"
                             value={form.confirmPassword}
                             onChange={handleChange}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#394C97] outline-none bg-gray-50 focus:bg-white transition"
+                            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#006494] outline-none bg-gray-50 focus:bg-white transition"
                             required
                         />
                     </div>
@@ -170,10 +170,10 @@ export default function Register() {
                                     checked={form.isAdmin}
                                     onChange={handleChange}
                                 />
-                                <div className={`block w-10 h-6 rounded-full transition-colors ${form.isAdmin ? 'bg-[#FE5900]' : 'bg-gray-300'}`}></div>
+                                <div className={`block w-10 h-6 rounded-full transition-colors ${form.isAdmin ? 'bg-[#986dff]' : 'bg-gray-300'}`}></div>
                                 <div className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${form.isAdmin ? 'translate-x-4' : 'translate-x-0'}`}></div>
                             </div>
-                            <div className="flex items-center text-sm font-medium text-gray-600 group-hover:text-[#394C97] transition">
+                            <div className="flex items-center text-sm font-medium text-gray-600 group-hover:text-[#006494] transition">
                                 <BuildingOffice2Icon className="h-5 w-5 mr-1" />
                                 Sou da Empresa (Admin)
                             </div>
@@ -189,14 +189,14 @@ export default function Register() {
                                     className="overflow-hidden"
                                 >
                                     <div className="relative">
-                                        <KeyIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#FE5900]" />
+                                        <KeyIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#986dff]" />
                                         <input
                                             type="password"
                                             name="adminKey"
                                             placeholder="Chave de Segurança da Empresa"
                                             value={form.adminKey}
                                             onChange={handleChange}
-                                            className="w-full pl-10 pr-4 py-3 border-2 border-[#FE5900]/30 rounded-lg focus:ring-2 focus:ring-[#FE5900] focus:border-[#FE5900] outline-none transition bg-orange-50 focus:bg-white text-[#FE5900] placeholder-orange-300 font-medium"
+                                            className="w-full pl-10 pr-4 py-3 border-2 border-[#986dff]/30 rounded-lg focus:ring-2 focus:ring-[#986dff] focus:border-[#986dff] outline-none transition bg-orange-50 focus:bg-white text-[#986dff] placeholder-orange-300 font-medium"
                                             required={form.isAdmin}
                                         />
                                     </div>
@@ -238,7 +238,7 @@ export default function Register() {
                             text-white font-bold text-lg shadow-lg transition transform hover:-translate-y-0.5
                             ${loading 
                                 ? "bg-gray-400 cursor-not-allowed"
-                                : "bg-[#394C97] hover:bg-[#2d3b75] hover:shadow-blue-900/30"
+                                : "bg-[#006494] hover:bg-[#2d3b75] hover:shadow-blue-900/30"
                             }
                         `}
                     >
@@ -254,7 +254,7 @@ export default function Register() {
                     Já tem uma conta?{" "}
                     <Link
                         to="/login"
-                        className="font-bold text-[#FE5900] hover:text-[#e04f00] hover:underline transition"
+                        className="font-bold text-[#006494] hover:text-[#986dff] hover:underline transition"
                     >
                         Entrar aqui
                     </Link>

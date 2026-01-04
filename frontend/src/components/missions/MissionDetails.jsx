@@ -322,7 +322,7 @@ const TaskDetailsModal = ({ task: initialTask, status, onClose, onComplete }) =>
                     <button 
                         onClick={() => handleSubmit('document', { fileName: file.name })}
                         disabled={!file || loading}
-                        className="w-full bg-[#FE5900] text-white py-3 rounded-xl font-bold hover:bg-orange-600 disabled:opacity-50 flex justify-center gap-2"
+                        className="w-full bg-[#986dff] text-white py-3 rounded-xl font-bold hover:bg-orange-600 disabled:opacity-50 flex justify-center gap-2"
                     >
                         {loading ? <Loader className="animate-spin w-5 h-5"/> : <Send size={18}/>} Enviar
                     </button>
@@ -386,7 +386,7 @@ const TaskDetailsModal = ({ task: initialTask, status, onClose, onComplete }) =>
                 <button 
                     onClick={() => handleSubmit('generic', { status: 'done' })}
                     disabled={loading}
-                    className="w-full bg-[#394C97] text-white py-3 rounded-xl font-bold hover:bg-blue-900 flex justify-center gap-2 mt-2"
+                    className="w-full bg-[#006494] text-white py-3 rounded-xl font-bold hover:bg-blue-900 flex justify-center gap-2 mt-2"
                 >
                     {loading ? <Loader className="animate-spin w-5 h-5"/> : <CheckCircle size={18}/>} Concluir
                 </button>
@@ -514,7 +514,7 @@ export default function MissionDetails({ mission: initialMissionData, onBack, re
         setSelectedTask(task);
     };
 
-    if (loading && !fullMissionData && !initialMissionData) return <div className="p-20 text-center"><Loader className="animate-spin mx-auto text-[#394C97] mb-2" /> Carregando missão...</div>;
+    if (loading && !fullMissionData && !initialMissionData) return <div className="p-20 text-center"><Loader className="animate-spin mx-auto text-[#006494] mb-2" /> Carregando missão...</div>;
     
     if (error && !fullMissionData) return <div className="p-10 text-center text-red-500"><AlertCircle className="mx-auto mb-2"/>{error}<br/><button onClick={onBack} className="mt-4 underline">Voltar</button></div>;
 
@@ -595,7 +595,7 @@ export default function MissionDetails({ mission: initialMissionData, onBack, re
                                         <button 
                                             onClick={handleJoin} 
                                             disabled={joining}
-                                            className="w-full bg-[#FE5900] text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform active:scale-95 flex items-center justify-center gap-2"
+                                            className="w-full bg-[#986dff] text-white px-6 py-3.5 rounded-xl font-bold shadow-lg shadow-orange-500/20 hover:bg-orange-600 hover:shadow-orange-500/30 transition-all transform active:scale-95 flex items-center justify-center gap-2"
                                         >
                                             {joining ? <Loader className="animate-spin w-5 h-5"/> : <PlayCircle className="w-5 h-5 fill-current" />}
                                             Iniciar Missão
@@ -636,7 +636,7 @@ export default function MissionDetails({ mission: initialMissionData, onBack, re
                                     </div>
                                     <div className="w-full bg-gray-200 h-2.5 rounded-full overflow-hidden">
                                         <div 
-                                            className="h-full bg-gradient-to-r from-blue-500 to-[#394C97] transition-all duration-1000 ease-out" 
+                                            className="h-full bg-gradient-to-r from-blue-500 to-[#006494] transition-all duration-1000 ease-out" 
                                             style={{ width: `${progressPercentage}%` }} 
                                         />
                                     </div>
@@ -656,7 +656,7 @@ export default function MissionDetails({ mission: initialMissionData, onBack, re
                                     onClick={() => setActiveTab(cat)}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                                         activeTab === cat 
-                                        ? 'bg-[#394C97] text-white shadow-md' 
+                                        ? 'bg-[#006494] text-white shadow-md' 
                                         : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                                     }`}
                                 >
@@ -697,7 +697,7 @@ export default function MissionDetails({ mission: initialMissionData, onBack, re
                                            <div key={idx} className="flex items-center justify-between text-sm">
                                                <div className="flex items-center gap-2">
                                                    <span className={`w-5 h-5 flex items-center justify-center rounded-full text-xs font-bold ${idx === 0 ? 'bg-yellow-100 text-yellow-700' : 'bg-gray-100 text-gray-500'}`}>{idx + 1}</span>
-                                                   <span className={`truncate max-w-[120px] ${user.isCurrentUser ? 'font-bold text-[#394C97]' : 'text-gray-600'}`}>{user.name}</span>
+                                                   <span className={`truncate max-w-[120px] ${user.isCurrentUser ? 'font-bold text-[#006494]' : 'text-gray-600'}`}>{user.name}</span>
                                                </div>
                                                <span className="font-bold text-gray-700">{user.points} pts</span>
                                            </div>

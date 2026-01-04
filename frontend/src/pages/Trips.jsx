@@ -75,7 +75,7 @@ export default function Trips() {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       
       {/* --- BANNER SUPERIOR --- */}
-      <div className="h-64 w-full bg-[#394C97] relative">
+      <div className="h-64 w-full bg-[#006494] relative">
         <div className="absolute top-4 right-4 text-white/80 text-sm font-medium">
           Passaporte
         </div>
@@ -87,7 +87,7 @@ export default function Trips() {
             className="flex items-center gap-4 text-white"
           >
             <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
-              <Globe className="w-10 h-10 text-[#FE5900]" />
+              <Globe className="w-10 h-10 text-[#986dff]" />
             </div>
             <div>
               <h1 className="text-4xl font-bold tracking-tight">Passaporte de Viagens</h1>
@@ -119,15 +119,15 @@ export default function Trips() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h2 className="text-xl font-bold text-[#394C97] mb-4 flex items-center gap-2">
-                <Ticket className="w-5 h-5 text-[#FE5900]" />
+              <h2 className="text-xl font-bold text-[#006494] mb-4 flex items-center gap-2">
+                <Ticket className="w-5 h-5 text-[#986dff]" />
                 Próximo Embarque
               </h2>
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
                 {/* Imagem do destino */}
                 <div className="md:w-1/3 h-48 md:h-auto relative">
                   <img src={nextTrip.image} alt={nextTrip.destination} className="w-full h-full object-cover" />
-                  <div className="absolute top-3 left-3 bg-[#FE5900] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <div className="absolute top-3 left-3 bg-[#986dff] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
                     {nextTrip.status}
                   </div>
                 </div>
@@ -147,7 +147,7 @@ export default function Trips() {
                     </div>
                     
                     <div className="flex items-center gap-2 text-gray-600 mt-2 bg-blue-50 w-fit px-3 py-1 rounded-lg">
-                      <Calendar className="w-4 h-4 text-[#394C97]" />
+                      <Calendar className="w-4 h-4 text-[#006494]" />
                       <span className="text-sm font-medium">{nextTrip.date}</span>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ export default function Trips() {
                           <span className={mission.completed ? "text-gray-400 line-through" : "text-gray-700"}>
                             {mission.title}
                           </span>
-                          <span className="text-xs font-bold text-[#FE5900] bg-orange-50 px-2 py-0.5 rounded ml-auto">
+                          <span className="text-xs font-bold text-[#986dff] bg-orange-50 px-2 py-0.5 rounded ml-auto">
                             +{mission.points}pts
                           </span>
                         </div>
@@ -182,8 +182,8 @@ export default function Trips() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <h2 className="text-xl font-bold text-[#394C97] mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#FE5900]" />
+              <h2 className="text-xl font-bold text-[#006494] mb-4 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-[#986dff]" />
                 Carimbos no Passaporte
               </h2>
               
@@ -196,7 +196,7 @@ export default function Trips() {
                     <div className="flex-1">
                       <h4 className="font-bold text-gray-800">{trip.destination}</h4>
                       <p className="text-xs text-gray-500 mb-2">{trip.date}</p>
-                      <span className="inline-block bg-[#394C97]/10 text-[#394C97] text-xs px-2 py-1 rounded font-medium">
+                      <span className="inline-block bg-[#006494]/10 text-[#006494] text-xs px-2 py-1 rounded font-medium">
                         {trip.badge}
                       </span>
                     </div>
@@ -204,7 +204,7 @@ export default function Trips() {
                 ))}
                 
                 {/* Botão Ver Mais */}
-                <div className="bg-gray-50 rounded-xl p-3 border border-dashed border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-[#394C97] transition-colors cursor-pointer min-h-[100px]">
+                <div className="bg-gray-50 rounded-xl p-3 border border-dashed border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 hover:text-[#006494] transition-colors cursor-pointer min-h-[100px]">
                   <span className="text-sm font-medium">+ Ver histórico completo</span>
                 </div>
               </div>
@@ -222,7 +222,7 @@ export default function Trips() {
               className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
             >
               <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
-                <Map className="w-5 h-5 text-[#394C97]" />
+                <Map className="w-5 h-5 text-[#006494]" />
                 Wishlist 2025
               </h3>
               <ul className="space-y-4">
@@ -230,7 +230,7 @@ export default function Trips() {
                 <WishlistItem place="Kyoto" country="Japão" progress={30} />
                 <WishlistItem place="Patagônia" country="Argentina" progress={10} />
               </ul>
-              <button className="w-full mt-6 py-2 text-sm text-[#394C97] font-semibold border border-[#394C97] rounded-lg hover:bg-[#394C97] hover:text-white transition-colors">
+              <button className="w-full mt-6 py-2 text-sm text-[#006494] font-semibold border border-[#006494] rounded-lg hover:bg-[#006494] hover:text-white transition-colors">
                 + Adicionar Destino
               </button>
             </motion.div>
@@ -240,12 +240,12 @@ export default function Trips() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8 }}
-              className="bg-gradient-to-br from-[#FE5900] to-[#FF8C00] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden"
+              className="bg-gradient-to-br from-[#986dff] to-[#986dff] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden"
             >
               <div className="relative z-10">
                 <h3 className="font-bold text-xl mb-1">Missão Relâmpago!</h3>
                 <p className="text-orange-100 text-sm mb-4">Visite 3 praias locais este mês e ganhe a badge "Rei dos Mares".</p>
-                <button className="bg-white text-[#FE5900] text-xs font-bold px-4 py-2 rounded-full shadow-sm hover:bg-orange-50 transition">
+                <button className="bg-white text-[#986dff] text-xs font-bold px-4 py-2 rounded-full shadow-sm hover:bg-[#986dff]/10 transition">
                   Aceitar Desafio
                 </button>
               </div>
@@ -270,17 +270,17 @@ const StatCard = ({ title, value, icon: Icon, delay, highlight }) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.5 }}
     className={`bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-28 hover:shadow-md transition-shadow relative overflow-hidden
-      ${highlight ? "ring-2 ring-[#FE5900]/20" : ""}`}
+      ${highlight ? "ring-2 ring-[#986dff]/20" : ""}`}
   >
     <div className="flex justify-between items-start">
       <span className="text-xs font-semibold text-gray-500 uppercase">{title}</span>
-      <Icon className={`w-5 h-5 ${highlight ? "text-[#FE5900]" : "text-[#394C97]"}`} />
+      <Icon className={`w-5 h-5 ${highlight ? "text-[#986dff]" : "text-[#006494]"}`} />
     </div>
-    <p className={`text-2xl font-bold mt-2 ${highlight ? "text-[#FE5900]" : "text-gray-800"}`}>
+    <p className={`text-2xl font-bold mt-2 ${highlight ? "text-[#986dff]" : "text-gray-800"}`}>
       {value}
     </p>
     {highlight && (
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#FE5900]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#986dff]"></div>
     )}
   </motion.div>
 );
@@ -294,7 +294,7 @@ const WishlistItem = ({ place, country, progress }) => (
       </div>
       <div className="w-full bg-gray-100 rounded-full h-1.5">
         <div 
-          className="bg-[#394C97] h-1.5 rounded-full transition-all duration-1000" 
+          className="bg-[#006494] h-1.5 rounded-full transition-all duration-1000" 
           style={{ width: `${progress}%` }}
         ></div>
       </div>

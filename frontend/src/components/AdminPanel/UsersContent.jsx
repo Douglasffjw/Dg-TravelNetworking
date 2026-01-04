@@ -62,7 +62,7 @@ const UserTable = ({ users, onEdit, onDelete, isLoading, showPoints }) => (
                         >
                             <td className="px-4 py-2 whitespace-nowrap">
                                 <div className="flex items-center gap-2.5">
-                                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#394C97] font-bold text-xs border border-gray-200 group-hover:border-blue-200 group-hover:bg-blue-100 transition-colors">
+                                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-[#006494] font-bold text-xs border border-gray-200 group-hover:border-blue-200 group-hover:bg-blue-100 transition-colors">
                                         {user.nome ? user.nome.charAt(0).toUpperCase() : <UserCircle size={16}/>}
                                     </div>
                                     <div className="font-semibold text-gray-900 text-sm">{user.nome}</div>
@@ -74,7 +74,7 @@ const UserTable = ({ users, onEdit, onDelete, isLoading, showPoints }) => (
                             <td className="px-4 py-2 whitespace-nowrap">{getRoleBadge(user.role)}</td>
                             {showPoints && (
                                 <td className="px-4 py-2 whitespace-nowrap">
-                                    <span className="font-mono font-bold text-[#394C97] bg-blue-50 px-1.5 py-0.5 rounded text-xs">{user.pontos}</span>
+                                    <span className="font-mono font-bold text-[#006494] bg-blue-50 px-1.5 py-0.5 rounded text-xs">{user.pontos}</span>
                                 </td>
                             )}
                             <td className="px-4 py-2 whitespace-nowrap">{getStatusBadge(user.ativo)}</td>
@@ -210,7 +210,7 @@ const UsersContent = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-96">
-                <Loader size={32} className="animate-spin text-[#394C97] mb-4" /> 
+                <Loader size={32} className="animate-spin text-[#006494] mb-4" /> 
                 <p className="text-gray-500 font-medium text-sm">Carregando usuários...</p>
             </div>
         );
@@ -219,11 +219,11 @@ const UsersContent = () => {
     return (
         <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20">
             {/* BANNER */}
-            <div className="h-64 w-full bg-[#394C97] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
+            <div className="h-64 w-full bg-[#006494] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-6 h-full flex items-center pb-10 md:translate-y-2 relative z-10">
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-5 text-white">
-                        <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20"><Users className="w-6 h-6 text-[#FE5900]" /></div>
+                        <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20"><Users className="w-6 h-6 text-[#986dff]" /></div>
                         <div><h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">Gestão de Usuários</h1><p className="text-blue-100/90 text-sm md:text-base mt-1 font-light">Controle de acesso e membros da plataforma</p></div>
                     </motion.div>
                 </div>
@@ -240,7 +240,7 @@ const UsersContent = () => {
                         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex-1 md:flex-none w-full md:w-64 bg-white p-1.5 rounded-lg shadow-md border border-gray-100 flex items-center gap-2 px-3">
                             <Search className="text-gray-400 w-4 h-4" /><input type="text" placeholder="Buscar por nome ou email..." className="flex-1 outline-none text-gray-700 placeholder-gray-400 text-xs py-1.5" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                         </motion.div>
-                        <motion.button initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} onClick={() => handleModalOpen()} className="bg-[#FE5900] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#e04f00] hover:shadow-orange-500/20 transition-all flex items-center justify-center gap-1.5 font-bold text-xs tracking-wide transform hover:-translate-y-0.5 whitespace-nowrap"><Plus size={14} strokeWidth={3} /> NOVO</motion.button>
+                        <motion.button initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} onClick={() => handleModalOpen()} className="bg-[#986dff] text-white px-4 py-2 rounded-lg shadow-md hover:bg-[#e04f00] hover:shadow-orange-500/20 transition-all flex items-center justify-center gap-1.5 font-bold text-xs tracking-wide transform hover:-translate-y-0.5 whitespace-nowrap"><Plus size={14} strokeWidth={3} /> NOVO</motion.button>
                     </div>
                 </div>
 

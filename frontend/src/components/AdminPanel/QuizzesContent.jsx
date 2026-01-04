@@ -259,7 +259,7 @@ export default function QuizzesContent() {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-64 bg-white rounded-2xl shadow-sm border border-gray-100">
-                <Loader size={32} className="animate-spin text-[#394C97] mb-4" />
+                <Loader size={32} className="animate-spin text-[#006494] mb-4" />
                 <p className="text-gray-500 font-medium text-sm">Carregando quizzes...</p>
             </div>
         );
@@ -268,7 +268,7 @@ export default function QuizzesContent() {
     return (
         <div className="min-h-screen bg-gray-50 pb-16 pt-12">
             <div className="space-y-6 mb-10">
-                <div className="bg-[#394C97] text-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="bg-[#006494] text-white rounded-2xl shadow-lg overflow-hidden">
                     <div className="relative p-8 md:p-12">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                             <div className="flex items-center gap-5">
@@ -286,7 +286,7 @@ export default function QuizzesContent() {
                                 </div>
                                 <button
                                     onClick={handleOpen}
-                                    className="bg-[#FE5900] text-white px-5 py-3 rounded-lg shadow-lg shadow-orange-500/30 hover:bg-[#d94d00] transition flex items-center gap-2 font-semibold whitespace-nowrap"
+                                    className="bg-[#986dff] text-white px-5 py-3 rounded-lg shadow-lg shadow-[#986dff]/30 hover:bg-[#7b4cff] transition flex items-center gap-2 font-semibold whitespace-nowrap"
                                     disabled={isSaving}
                                 >
                                     <Plus size={16} /> Novo Quiz
@@ -369,7 +369,7 @@ export default function QuizzesContent() {
             {showModal && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
                     <div className="bg-white p-6 rounded-xl w-full max-w-2xl shadow-2xl relative max-h-[90vh] overflow-y-auto">
-                        <h3 className="text-xl font-bold text-[#394C97] mb-4 flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-[#006494] mb-4 flex items-center gap-2">
                             <HelpCircle size={18}/> {isEditing ? 'Editar Quiz' : 'Novo Quiz'}
                         </h3>
                         <button onClick={handleClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
@@ -413,7 +413,7 @@ export default function QuizzesContent() {
                                     ))}
                                 </select>
                                 {tasks.length === 0 && (
-                                    <p className="text-xs text-amber-600 mt-1">Crie uma tarefa primeiro para vincular o quiz.</p>
+                                    <p className="text-xs text-[#986dff] mt-1">Crie uma tarefa primeiro para vincular o quiz.</p>
                                 )}
                             </div>
 
@@ -509,7 +509,7 @@ export default function QuizzesContent() {
                             <button onClick={handleClose} className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg" disabled={isSaving}>Cancelar</button>
                             <button
                                 onClick={handleSave}
-                                className="px-5 py-2 bg-[#394C97] text-white rounded-lg font-semibold hover:bg-[#2f3f7a] flex items-center gap-2 disabled:opacity-70"
+                                className="px-5 py-2 bg-[#006494] text-white rounded-lg font-semibold hover:bg-[#2f3f7a] flex items-center gap-2 disabled:opacity-70"
                                 disabled={isSaving}
                             >
                                 {isSaving && <Loader size={16} className="animate-spin" />}

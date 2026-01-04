@@ -169,7 +169,7 @@ const DashboardContent = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-96">
-                <Loader size={40} className="animate-spin text-[#394C97] mb-4" /> 
+                <Loader size={40} className="animate-spin text-[#006494] mb-4" /> 
                 <p className="text-gray-500 font-medium">Sincronizando dados...</p>
             </div>
         );
@@ -194,9 +194,9 @@ const DashboardContent = () => {
         <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20">
             
             {/* --- BANNER SUPERIOR --- */}
-            <div className="h-64 w-full bg-[#394C97] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
+            <div className="h-64 w-full bg-[#006494] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#FE5900] opacity-10 rounded-full translate-y-1/4 -translate-x-1/4 blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#986dff] opacity-10 rounded-full translate-y-1/4 -translate-x-1/4 blur-2xl"></div>
 
                 <div className="max-w-7xl mx-auto px-6 h-full flex items-center pb-10 md:translate-y-2 relative z-10">
                     <motion.div 
@@ -206,7 +206,7 @@ const DashboardContent = () => {
                     >
                         <div className="flex items-center gap-6">
                             <div className="p-4 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20">
-                                <LayoutDashboard className="w-8 h-8 text-[#FE5900]" />
+                                <LayoutDashboard className="w-8 h-8 text-[#986dff]" />
                             </div>
                             <div>
                                 <div className="flex items-center gap-3">
@@ -268,11 +268,11 @@ const DashboardContent = () => {
                                         ) : (
                                             stats.topUser.name.charAt(0).toUpperCase()
                                         )}
-                                        <div className="absolute bottom-0 right-0 bg-[#FE5900] w-8 h-8 rounded-full flex items-center justify-center border-2 border-white text-white text-xs font-bold shadow-sm z-10">1º</div>
+                                        <div className="absolute bottom-0 right-0 bg-[#986dff] w-8 h-8 rounded-full flex items-center justify-center border-2 border-white text-white text-xs font-bold shadow-sm z-10">1º</div>
                                     </div>
                                     <h4 className="text-xl font-bold text-gray-800 line-clamp-1">{stats.topUser.name}</h4>
                                     <div className="mt-3 inline-flex items-baseline gap-1">
-                                        <span className="text-3xl font-black text-[#394C97]">{stats.topUser.points}</span>
+                                        <span className="text-3xl font-black text-[#006494]">{stats.topUser.points}</span>
                                         <span className="text-sm text-gray-400 font-medium">pts</span>
                                     </div>
                                 </>
@@ -293,7 +293,7 @@ const DashboardContent = () => {
                         className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 lg:col-span-2 flex flex-col"
                     >
                         <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
-                            <h3 className="text-lg font-bold text-[#394C97] flex items-center gap-2">
+                            <h3 className="text-lg font-bold text-[#006494] flex items-center gap-2">
                                 <Medal size={20} /> Destaques por Missão
                             </h3>
                             <span className="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">Campeões (Em Tempo Real)</span>
@@ -324,7 +324,7 @@ const DashboardContent = () => {
                                             </div>
                                             
                                             <div className="text-right">
-                                                <p className="text-lg font-black text-[#FE5900]">
+                                                <p className="text-lg font-black text-[#986dff]">
                                                     {mission.topUser.points}
                                                 </p>
                                                 <p className="text-xs text-gray-400 font-medium">XP Obtido</p>

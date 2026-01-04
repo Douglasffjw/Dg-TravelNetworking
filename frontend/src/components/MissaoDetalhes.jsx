@@ -170,7 +170,7 @@ const MissaoDetalhes = () => {
                         className={`w-full md:w-auto font-semibold py-3 px-8 rounded-full text-md transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group
                             ${isAccepting 
                                 ? 'bg-gray-400 cursor-not-allowed' 
-                                : 'bg-[#394C97] hover:bg-[#FE5900] text-white'
+                                : 'bg-[#394C97] hover:bg-[#986dff] text-white'
                             }`}
                     >
                         {isAccepting ? (

@@ -172,7 +172,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                 </button>
 
                 <div className="px-8 py-6 border-b border-gray-100 bg-gray-50/50 rounded-t-2xl">
-                    <h2 className="text-2xl font-bold text-[#394C97]">
+                    <h2 className="text-2xl font-bold text-[#006494]">
                         {isEditing ? "Editar Missão" : "Nova Missão"}
                     </h2>
                     <p className="text-gray-500 text-sm mt-1">Configure os detalhes e organize a jornada do usuário.</p>
@@ -182,7 +182,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                     {/* SEÇÃO 1: DADOS E CAPA */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div className="lg:col-span-2 space-y-5">
-                            <div className="flex items-center gap-2 text-[#394C97] font-bold text-xs uppercase tracking-widest mb-2 border-b border-gray-100 pb-2">
+                            <div className="flex items-center gap-2 text-[#006494] font-bold text-xs uppercase tracking-widest mb-2 border-b border-gray-100 pb-2">
                                 <Settings size={14} /> Dados Gerais
                             </div>
 
@@ -191,7 +191,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                                 <input
                                     type="text"
                                     placeholder="Ex: Imersão no Vale do Silício"
-                                    className="w-full border border-gray-200 bg-gray-50 p-3 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 outline-none font-bold text-gray-700"
+                                    className="w-full border border-gray-200 bg-gray-50 p-3 rounded-xl focus:ring-2 focus:ring-[#006494]/20 outline-none font-bold text-gray-700"
                                     value={newMission.titulo || newMission.title || ""}
                                     onChange={(e) => setNewMission({ ...newMission, titulo: e.target.value })}
                                     disabled={isLoading}
@@ -203,7 +203,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                                 <textarea
                                     placeholder="Detalhes..."
                                     rows={2}
-                                    className="w-full border border-gray-200 bg-gray-50 p-3 rounded-xl focus:ring-2 focus:ring-[#394C97]/20 outline-none text-sm resize-none"
+                                    className="w-full border border-gray-200 bg-gray-50 p-3 rounded-xl focus:ring-2 focus:ring-[#006494]/20 outline-none text-sm resize-none"
                                     value={newMission.descricao || ""}
                                     onChange={(e) => setNewMission({ ...newMission, descricao: e.target.value })}
                                     disabled={isLoading}
@@ -297,7 +297,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                             <div className="border-2 border-dashed border-gray-300 rounded-xl p-4 flex flex-col items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors h-full min-h-[200px] relative overflow-hidden group">
                                 {uploading ? (
                                     <div className="flex flex-col items-center">
-                                        <Loader className="animate-spin text-[#394C97] mb-2" />
+                                        <Loader className="animate-spin text-[#006494] mb-2" />
                                         <span className="text-xs text-gray-400">Enviando...</span>
                                     </div>
                                 ) : newMission.imageUrl ? (
@@ -332,7 +332,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                     {/* SEÇÃO 2: TAREFAS VINCULADAS (ORDENAÇÃO) */}
                     <section className="space-y-4 pt-4 border-t border-gray-100">
                         <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 text-[#394C97] font-bold text-xs uppercase tracking-widest">
+                            <div className="flex items-center gap-2 text-[#006494] font-bold text-xs uppercase tracking-widest">
                                 <Briefcase size={14} /> Tarefas Vinculadas
                             </div>
                             <span className="text-[10px] text-gray-400 bg-gray-100 px-2 py-1 rounded">
@@ -355,8 +355,8 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, x: -10 }}
                                         >
-                                            <div className="bg-white border border-gray-200 rounded-xl p-3 flex items-center gap-3 shadow-sm hover:border-[#394C97] transition-colors cursor-grab active:cursor-grabbing group relative pr-12">
-                                                <div className="text-gray-300 group-hover:text-[#394C97]">
+                                            <div className="bg-white border border-gray-200 rounded-xl p-3 flex items-center gap-3 shadow-sm hover:border-[#006494] transition-colors cursor-grab active:cursor-grabbing group relative pr-12">
+                                                <div className="text-gray-300 group-hover:text-[#006494]">
                                                     <GripVertical size={20} />
                                                 </div>
                                                 
@@ -403,7 +403,7 @@ const MissionModal = ({ newMission, setNewMission, handleSaveMission, handleModa
 
                 <div className="p-6 border-t border-gray-100 bg-gray-50 flex justify-end gap-3 rounded-b-2xl sticky bottom-0 z-20">
                     <button onClick={handleModalClose} disabled={isLoading} className="px-6 py-2.5 rounded-xl text-gray-600 font-bold text-xs hover:bg-gray-200 transition-colors uppercase tracking-wide">Cancelar</button>
-                    <button onClick={onSaveWrapper} disabled={isLoading || uploading} className="px-8 py-2.5 rounded-xl bg-[#394C97] text-white font-bold shadow-lg hover:bg-[#2a385f] transition-all flex items-center gap-2 text-xs uppercase tracking-wide">
+                    <button onClick={onSaveWrapper} disabled={isLoading || uploading} className="px-8 py-2.5 rounded-xl bg-[#006494] text-white font-bold shadow-lg hover:brightness-90 transition-all flex items-center gap-2 text-xs uppercase tracking-wide">
                         {isLoading || uploading ? <Loader size={16} className="animate-spin" /> : null}
                         {isEditing ? "Salvar" : "Criar"}
                     </button>

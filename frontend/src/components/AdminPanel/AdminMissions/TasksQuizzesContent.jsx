@@ -219,7 +219,7 @@ const TasksQuizzesContent = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-64 bg-white rounded-2xl shadow-sm border border-gray-100">
-                <Loader size={32} className="animate-spin text-[#394C97] mb-4" /> 
+                <Loader size={32} className="animate-spin text-[#006494] mb-4" /> 
                 <p className="text-gray-500 font-medium text-sm">Sincronizando atividades...</p>
             </div>
         );
@@ -229,7 +229,7 @@ const TasksQuizzesContent = () => {
         <div className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20">
             
             {/* --- BANNER SUPERIOR --- */}
-            <div className="h-64 w-full bg-[#394C97] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
+            <div className="h-64 w-full bg-[#006494] relative rounded-b-[2.5rem] md:rounded-b-none overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/4 blur-3xl"></div>
                 <div className="max-w-7xl mx-auto px-6 h-full flex items-center pb-10 md:translate-y-2 relative z-10">
                     <motion.div 
@@ -238,7 +238,7 @@ const TasksQuizzesContent = () => {
                         className="flex items-center gap-5 text-white"
                     >
                         <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl ring-1 ring-white/20">
-                            <ListChecks className="w-6 h-6 text-[#FE5900]" />
+                            <ListChecks className="w-6 h-6 text-[#986dff]" />
                         </div>
                         <div>
                             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight">Tarefas e Quizzes</h1>
@@ -266,7 +266,7 @@ const TasksQuizzesContent = () => {
                                 <select
                                     value={selectedMissionId}
                                     onChange={(e) => setSelectedMissionId(e.target.value)}
-                                    className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-700 font-medium focus:ring-2 focus:ring-[#394C97] focus:border-[#394C97] outline-none appearance-none transition-all cursor-pointer hover:bg-white"
+                                    className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-700 font-medium focus:ring-2 focus:ring-[#006494] focus:border-[#006494] outline-none appearance-none transition-all cursor-pointer hover:bg-white"
                                 >
                                     <option value="">Todas as Missões</option>
                                     {missionsList.map(m => (
@@ -300,8 +300,8 @@ const TasksQuizzesContent = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
                     <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/50 text-sm text-gray-600 font-medium shadow-sm">
                         {selectedMissionId 
-                            ? <span>Tarefas nesta missão: <span className="text-[#394C97] font-bold">{filteredTasks.length}</span></span>
-                            : <span>Total de Atividades: <span className="text-[#394C97] font-bold">{tasks.length}</span></span>
+                            ? <span>Tarefas nesta missão: <span className="text-[#006494] font-bold">{filteredTasks.length}</span></span>
+                            : <span>Total de Atividades: <span className="text-[#006494] font-bold">{tasks.length}</span></span>
                         }
                     </div>
 
@@ -309,7 +309,7 @@ const TasksQuizzesContent = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         onClick={() => handleModalOpen()}
-                        className="bg-[#FE5900] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#e04f00] hover:shadow-orange-500/20 transition-all flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5"
+                        className="bg-[#986dff] text-white px-6 py-3 rounded-xl shadow-lg hover:brightness-90 hover:shadow-[#986dff]/20 transition-all flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wide transform hover:-translate-y-0.5"
                         disabled={isSaving}
                     >
                         <Plus size={16} strokeWidth={3} />
@@ -399,13 +399,13 @@ const TasksQuizzesContent = () => {
                                                     )}
                                                 </div>
                                                 
-                                                <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#394C97] transition-colors">
+                                                <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#006494] transition-colors">
                                                     {task.titulo}
                                                 </h3>
                                                 
                                                 <div className="flex items-center gap-4 mt-2">
                                                     <span className="flex items-center gap-1.5 text-xs font-semibold text-gray-600 bg-gray-50 px-2 py-1 rounded-md border border-gray-200">
-                                                        <Trophy size={12} className="text-[#FE5900]" /> 
+                                                        <Trophy size={12} className="text-[#986dff]" /> 
                                                         {task.pontos} XP
                                                     </span>
                                                     <span className="text-xs text-gray-400">

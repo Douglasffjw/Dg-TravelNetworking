@@ -218,7 +218,7 @@ export default function Profile() {
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#394C97]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#006494]"></div>
       </div>
     );
   }
@@ -229,7 +229,7 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-800">
       {/* Banner Superior */}
-      <div className="h-48 w-full bg-[#394C97] relative">
+      <div className="h-48 w-full bg-[#006494] relative">
         <div className="absolute top-4 right-4 text-white/80 text-sm">
           Atlântico Avanti Perfil
         </div>
@@ -244,7 +244,7 @@ export default function Profile() {
               {...getRootProps()}
               className={`w-40 h-40 rounded-full border-[6px] border-white bg-gray-100 overflow-hidden shadow-md flex items-center justify-center relative
                 ${isEditing ? "cursor-pointer hover:border-gray-200 transition-colors" : ""} 
-                ${isDragActive ? "border-[#FE5900]" : ""}`}
+                ${isDragActive ? "border-[#986dff]" : ""}`}
             >
               <input {...getInputProps()} />
 
@@ -255,7 +255,7 @@ export default function Profile() {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <span className="text-4xl font-bold text-[#394C97]">{getInitials(user?.name)}</span>
+                <span className="text-4xl font-bold text-[#006494]">{getInitials(user?.name)}</span>
               )}
 
               {/* Overlay de Edição de Foto */}
@@ -269,7 +269,7 @@ export default function Profile() {
 
           {/* Nome e Descrição */}
           <div className="flex-1 pb-4 text-center md:text-left md:translate-y-2">
-            <h1 className="text-3xl font-bold text-[#394C97] mb-1">
+            <h1 className="text-3xl font-bold text-[#006494] mb-1">
               {user.name}
             </h1>
             <p className="text-gray-500 font-medium text-lg">
@@ -283,7 +283,7 @@ export default function Profile() {
               <>
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="flex items-center gap-2 px-6 py-2 bg-[#394C97] text-white rounded-lg hover:bg-[#2d3b75] transition shadow-sm font-medium"
+                  className="flex items-center gap-2 px-6 py-2 bg-[#006494] text-white rounded-lg hover:bg-[#2d3b75] transition shadow-sm font-medium"
                 >
                   <PencilSquareIcon className="h-5 w-5" />
                   Editar Perfil
@@ -299,7 +299,7 @@ export default function Profile() {
                 <button
                   onClick={handleSave}
                   disabled={isSaving}
-                  className={`flex items-center gap-2 px-6 py-2 bg-[#FE5900] text-white rounded-lg hover:bg-[#e04f00] transition shadow-sm font-medium ${isSaving ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`flex items-center gap-2 px-6 py-2 bg-[#986dff] text-white rounded-lg hover:bg-[#e04f00] transition shadow-sm font-medium ${isSaving ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSaving ? (
                     "Salvando..."
@@ -333,7 +333,7 @@ export default function Profile() {
               animate={{ opacity: 1, y: 0 }}
               className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm"
             >
-              <h2 className="text-xl font-bold text-[#394C97] mb-6 border-b pb-2">
+              <h2 className="text-xl font-bold text-[#006494] mb-6 border-b pb-2">
                 Informações Pessoais
               </h2>
 
@@ -397,11 +397,11 @@ export default function Profile() {
                 <div>
                   <div className="flex justify-between items-end mb-2">
                     <span className="text-gray-600 font-medium">Nível</span>
-                    <span className="text-3xl font-bold text-[#394C97]">{getLevel(user.pontos)}</span>
+                    <span className="text-3xl font-bold text-[#006494]">{getLevel(user.pontos)}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <div
-                      className="bg-[#394C97] h-2.5 rounded-full transition-all duration-1000"
+                      className="bg-[#006494] h-2.5 rounded-full transition-all duration-1000"
                       style={{ width: `${getProgress(user.pontos)}%` }}
                     ></div>
                   </div>
@@ -412,7 +412,7 @@ export default function Profile() {
 
                 <div className="pt-4 border-t border-gray-100">
                   <p className="text-gray-600 font-medium mb-1">Pontuação Total</p>
-                  <p className="text-2xl font-bold text-[#FE5900]">{user.pontos}</p>
+                  <p className="text-2xl font-bold text-[#986dff]">{user.pontos}</p>
                 </div>
               </div>
             </div>
